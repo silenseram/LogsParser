@@ -12,6 +12,7 @@ public class ConfigManager {
     private int day;
     private int month;
     private int year;
+    private String filePath;
 
     public ConfigManager() {
         properties = new Properties();
@@ -30,6 +31,7 @@ public class ConfigManager {
             month = Integer.parseInt(properties.getProperty("month"));
             year = Integer.parseInt(properties.getProperty("year"));
             server = properties.getProperty("server");
+            filePath = properties.getProperty("filepath");
 
         } catch (Exception e){
             e.printStackTrace();
@@ -44,6 +46,7 @@ public class ConfigManager {
             properties.setProperty("month", Integer.toString(month));
             properties.setProperty("year", Integer.toString(year));
             properties.setProperty("server", server);
+            properties.setProperty("filepath", filePath);
 
             properties.store(out, null);
             out.close();
@@ -76,6 +79,8 @@ public class ConfigManager {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public String getFilePath() { return filePath; }
 
     public String getServerName(){
         return "EasyTech";

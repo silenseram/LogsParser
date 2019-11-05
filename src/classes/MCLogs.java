@@ -1,6 +1,7 @@
 package classes;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,25 +11,25 @@ public class MCLogs {
     private int month;
     private int year;
     private String server;
+    ConfigManager configManager;
 
     public MCLogs() {
-        ConfigManager configManager = new ConfigManager();
+        configManager = new ConfigManager();
         this.day = configManager.getDay();
         this.month = configManager.getMonth();
         this.year = configManager.getYear();
         this.server = configManager.getServerName();
     }
 
-    public MCLogs(int day, int month, int year) {
-        ConfigManager configManager = new ConfigManager();
-        this.day = day;
-        this.month = month;
-        this.year = year;
+    public MCLogs(LocalDate date) {
+        configManager = new ConfigManager();
+        this.day = date.getDayOfMonth();
+        this.month = date.getMonthValue();
+        this.year = date.getYear();
         this.server = configManager.getServerName();
     }
 
     public List<PrivateMessage> getMessages(){
-        ConfigManager configManager = new ConfigManager();
 
         DateManager dateManager = new DateManager(day, month, year);
         //System.out.println(configManager.getDay() + " " + month + " " + year);
@@ -46,5 +47,9 @@ public class MCLogs {
         }
 
         return messages;
+    }
+
+    public String getNowFilePath(){
+        return configManager.getFilePath();
     }
 }

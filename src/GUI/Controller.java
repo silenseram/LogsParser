@@ -1,9 +1,7 @@
 package GUI;
 
 import GUI.fxml.AllertWindow;
-import classes.ConfigManager;
-import classes.MCLogs;
-import classes.PrivateMessage;
+import classes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -23,11 +21,14 @@ public class Controller {
     private CheckBox showTime;
 
     @FXML
-    private void click(ActionEvent event){
+    private void click(ActionEvent event) throws InterruptedException {
+        for (Thread t : Thread.getAllStackTraces().keySet()) {
+            if (t.getName().equals(RealtimeUpdater.threadName)) t.join();
+        }
 
         LocalDate date = datePicker.getValue();
         LocalDate nowDate = LocalDate.now();
-        MCLogs mcLogs;
+
         if (date == null){
             date = nowDate;
         }
@@ -36,25 +37,13 @@ public class Controller {
             AllertWindow.dispplay("Ошибка!", "Выбранная дата меньше нынешней");
             return;
         }
+        MCLogs logs = new MCLogs(date);
 
-        mcLogs = new MCLogs(date.getDayOfMonth(), date.getMonthValue(), date.getYear());
+        RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea);
 
-        String allText = "";
-        List<PrivateMessage> messages = mcLogs.getMessages();
-        if (messages == null){
-            AllertWindow.dispplay("Ошибка!", "Выбранная дата некорректна");
-            return;
-        }
-
-        String msg = "";
-        for (PrivateMessage i : messages){
-            msg = "";
-            if (showTime.isSelected())
-                msg += i.getStringTime() + " ";
-            msg += i.getSender() + " -> " + i.getReciever() + ": " + i.getText() + "\n";
-            allText += msg;
-        }
-        textArea.setText(allText);
+        Thread thread = new Thread(realtimeUpdater);
+        thread.setName(RealtimeUpdater.threadName);
+        thread.start();
     }
 
     @FXML
@@ -62,7 +51,7 @@ public class Controller {
 
     @FXML
     public void showTimeChange(ActionEvent event){
-        click(null);
+        //click(null);
     } //TODO
 
     @FXML
