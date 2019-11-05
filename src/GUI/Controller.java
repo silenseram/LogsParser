@@ -10,7 +10,6 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Properties;
 
 public class Controller {
 
@@ -56,8 +55,6 @@ public class Controller {
             allText += msg;
         }
         textArea.setText(allText);
-        //textArea.setScrollTop(0);
-        //System.out.println(showTime.isSelected());
     }
 
     @FXML
@@ -66,11 +63,11 @@ public class Controller {
     @FXML
     public void showTimeChange(ActionEvent event){
         click(null);
-    }
+    } //TODO
 
     @FXML
-    public void setOnAction(ActionEvent actionEvent) {
-        //AllertWindow.dispplay("Ошибка!", "Выбранная дата некорректна");
+    public void setOnAction(ActionEvent e){
+        //TODO sth
     }
 
     @FXML
