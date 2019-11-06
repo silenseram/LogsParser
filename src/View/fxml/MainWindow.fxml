@@ -46,11 +46,11 @@
                 </MenuBar>
                 <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
                     <items>
-                        <Button fx:id="btn" mnemonicParsing="false" onAction="#click" text="Button" />
+                        <Button fx:id="btn" mnemonicParsing="false" onAction="#click" text="Update" />
                   <CheckBox fx:id="showTime" mnemonicParsing="false" onAction="#onShowTimeAction" text="Показывать время" />
-                  <CheckBox mnemonicParsing="false" text="L" />
-                  <CheckBox mnemonicParsing="false" text="G" />
-                  <CheckBox mnemonicParsing="false" text="Личные сообщения" />
+                  <CheckBox fx:id="localCheckBox" mnemonicParsing="false" onAction="#onLocalCheckBoxAction" text="L" />
+                  <CheckBox fx:id="globalCheckBox" mnemonicParsing="false" onAction="#onGlobalCheckBoxAction" text="G" />
+                  <CheckBox fx:id="privateMessageCheckBox" mnemonicParsing="false" onAction="#onPrivateMessageCheckBoxAction" text="Личные сообщения" />
                     </items>
                 </ToolBar>
             <TextArea fx:id="textArea" editable="false" onMouseExited="#onMouseExited" onScroll="#setOnScroll" prefHeight="200.0" prefWidth="200.0" scrollTop="1.7976931348623157E308" text="1234" wrapText="true" GridPane.rowIndex="1" />

@@ -32,13 +32,13 @@ public class RealtimeUpdater implements Runnable{
             if (!isMainThreadExist)
                 return;
 
-            List<PrivateMessage> messages = logs.getMessages();
+            List<String> messages = logs.getRequestedLines();
 
-            for (PrivateMessage i : messages){
+            for (String i : messages){
                 if (showTime) {
-                    text += i.getAllMessageWithTime() + "\n";
+                    text += i + "\n";
                 } else {
-                    text += i.getAllMessage() + "\n";
+                    text += i + "\n";
                 }
             }
 

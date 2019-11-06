@@ -10,31 +10,45 @@ import java.util.regex.Pattern;
 public class TextManager {
 
     //НЕНАВИЖУ РЕГУЛЯРКИ
-    private String localMessaeStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell)\\s.{1,32}\\s";
-    private Pattern pattern;
+    private String privateMessaeStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell)\\s.{1,32}\\s";
+    private String localChatStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s\\[{1}L\\]{1}\\s.{1,32}\\s";
+    private String globalChatStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s\\[{1}G\\]{1}\\s.{1,32}\\s";
+
+    private Pattern privateMessagePattern;
+    private Pattern localChatPattern;
+    private Pattern globalChatPattern;
     private Matcher matcher;
     private File file;
 
     public TextManager(String filePath){
         file = new File(filePath);
-        pattern = Pattern.compile(localMessaeStringPattern);
+        privateMessagePattern = Pattern.compile(privateMessaeStringPattern);
+        localChatPattern = Pattern.compile(localChatStringPattern);
+        globalChatPattern = Pattern.compile(globalChatStringPattern);
     }
 
-    public boolean isMessage(String command){  return pattern.matcher(command).lookingAt();  }
-
-    public void print(){
-        for (String i : getAllLines()){
-            if (isMessage(i))
-                System.out.println(i);
-        }
+    public boolean isPrivateMessage(String command){
+        return privateMessagePattern.matcher(command).lookingAt();
     }
 
-    public List<String> getPrivateMessages(){
+    public boolean isGlobalChatMessage(String command){
+        return globalChatPattern.matcher(command).lookingAt();
+    }
+
+    public boolean islocalChatMessage(String command){
+        return localChatPattern.matcher(command).lookingAt();
+    }
+
+    public List<String> getNeedStrings(boolean isLocalEnabled, boolean isGlobalEnabled, boolean isPrivateEnabled){
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             for (String current = reader.readLine(); current != null; current = reader
                     .readLine()) {
-                if (isMessage(current)) {
+                if (isPrivateEnabled && isPrivateMessage(current)) {
+                    result.add(current);
+                } else if (isLocalEnabled && islocalChatMessage(current)){
+                    result.add(current);
+                } else if (isGlobalEnabled && isGlobalChatMessage(current)){
                     result.add(current);
                 }
             }

@@ -20,6 +20,13 @@ public class Controller {
     private Button btn;
 
     @FXML
+    private CheckBox localCheckBox;
+    @FXML
+    private CheckBox globalCheckBox;
+    @FXML
+    private CheckBox privateMessageCheckBox;
+
+    @FXML
     private DatePicker datePicker;
 
     @FXML
@@ -31,13 +38,13 @@ public class Controller {
     }
 
     @FXML
-    private void click(ActionEvent event) throws InterruptedException {
+    public void click(ActionEvent event) throws InterruptedException {
         for (Thread t : Thread.getAllStackTraces().keySet()) {
             if (t.getName().equals(RealtimeUpdater.threadName)) t.stop();
         }
         textArea.setScrollTop(Double.MAX_VALUE);
         LocalDate date = LocalDate.now();
-        MCLogs logs = new MCLogs(date);
+        MCLogs logs = new MCLogs(date, showTime.isSelected(), localCheckBox.isSelected(), globalCheckBox.isSelected(), privateMessageCheckBox.isSelected());
 
         RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea, Thread.currentThread().getName(), showTime.isSelected());
 
@@ -56,6 +63,19 @@ public class Controller {
 
     @FXML
     private void onShowTimeAction(ActionEvent a) throws InterruptedException {
+        click(null);
+    }
+
+    @FXML
+    private void onPrivateMessageCheckBoxAction(ActionEvent a) throws InterruptedException{
+        click(null);
+    }
+    @FXML
+    private void onGlobalCheckBoxAction(ActionEvent a) throws InterruptedException{
+        click(null);
+    }
+    @FXML
+    private void onLocalCheckBoxAction(ActionEvent a) throws InterruptedException{
         click(null);
     }
 }

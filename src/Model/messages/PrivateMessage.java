@@ -10,84 +10,63 @@ public class PrivateMessage {
 
     int hours, minutes, seconds;
 
-    public PrivateMessage(String rawMessage) {
-        this.rawMessage = rawMessage;
+    public PrivateMessage(String rawMessage) {}
 
+    public static String getMessageWithTime(String rawMessage){
         String words[] = rawMessage.split("\\s");
 
-        String temp = words[0];
-        temp = temp.replace("[", "");
-        temp = temp.replace("]", "");
+        String time = words[0];
 
-        String time[] = temp.split(":");
+        String type = words[5];
+        String text = "";
+        String sender = "";
+        String reciever = "";
 
-        hours = Integer.parseInt(time[0]);
-        minutes = Integer.parseInt(time[1]);
-        seconds = Integer.parseInt(time[2]);
-
-        type = words[5];
-        text = "";
         if (type != "r") {
             sender = words[1];
             reciever = words[6];
-                for (int i = 7; i < words.length; i++){
-                    text += words[i] + " ";
-                }
+            for (int i = 7; i < words.length; i++){
+                text += words[i] + " ";
+            }
+        } else if (type == "r"){
+            sender = words[1];
+            for (int i = 7; i < words.length; i++){
+                text += words[i] + " ";
+            }
+        }
+        if (type == "r"){
+            return time + " " + sender + "/r " + text;
+        } else{
+            return time + " " + sender + "-> " + reciever + ": " + text;
+        }
+    }
+    public static String getMessage(String rawMessage){
+        String words[] = rawMessage.split("\\s");
+
+        String time = words[0];
+
+        String type = words[5];
+        String text = "";
+        String sender = "";
+        String reciever = "";
+
+        if (type != "r") {
+            sender = words[1];
+            reciever = words[6];
+            for (int i = 7; i < words.length; i++){
+                text += words[i] + " ";
+            }
+        } else if (type == "r"){
+            sender = words[1];
+            for (int i = 7; i < words.length; i++){
+                text += words[i] + " ";
+            }
+        }
+        if (type == "r"){
+            return sender + "/r " + text;
+        } else{
+            return sender + "-> " + reciever + ": " + text;
         }
     }
 
-    public String getAllMessage(){
-        return sender + " -> " + reciever + ": " + text;
-    }
-
-    public String getAllMessageWithTime(){
-        return getStringTime() + " " + sender + " -> " + reciever + ": " + text;
-    }
-
-    public String getSender() {
-        return sender;
-    }
-
-    public String getReciever() {
-        return reciever;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getRawMessage() {
-        return rawMessage;
-    }
-
-    public int getHours() {
-        return hours;
-    }
-
-    public int getMinutes() {
-        return minutes;
-    }
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public String getStringTime(){
-        String h, m, s;
-        h = String.valueOf(hours);
-        m = String.valueOf(minutes);
-        s = String.valueOf(seconds);
-
-        if (hours < 10){
-            h = "0" + h;
-        }
-        if (minutes < 10){
-            m = "0" + m;
-        }
-        if (seconds < 10){
-            s = "0" + s;
-        }
-
-        return "[" + h + ":" + m + ":" + s + "]";
-    }
 }
