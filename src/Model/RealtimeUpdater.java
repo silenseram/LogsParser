@@ -11,8 +11,10 @@ public class RealtimeUpdater implements Runnable{
     private MCLogs logs;
     public final static String threadName = "RealtimeHandler";
     private String mainThreadName;
+    private boolean showTime;
 
-    public RealtimeUpdater(MCLogs logs, TextArea textArea, String mainThreadName) {
+    public RealtimeUpdater(MCLogs logs, TextArea textArea, String mainThreadName, boolean showTime) {
+        this.showTime = showTime;
         this.logs = logs;
         this.textArea = textArea;
         this.mainThreadName = mainThreadName;
@@ -33,7 +35,11 @@ public class RealtimeUpdater implements Runnable{
             List<PrivateMessage> messages = logs.getMessages();
 
             for (PrivateMessage i : messages){
-                text += i.getSender() + " -> " + i.getReciever() + ": " + i.getText() + "\n";
+                if (showTime) {
+                    text += i.getAllMessageWithTime() + "\n";
+                } else {
+                    text += i.getAllMessage() + "\n";
+                }
             }
 
             textArea.setText(text);
@@ -41,7 +47,7 @@ public class RealtimeUpdater implements Runnable{
             text = "";
 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

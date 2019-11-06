@@ -14,6 +14,7 @@ public class MCLogs {
     private int year;
     private String server;
     ConfigManager configManager;
+    TextManager textManager;
 
     public MCLogs() {
         configManager = new ConfigManager();
@@ -44,7 +45,7 @@ public class MCLogs {
         TextManager textManager = new TextManager(file.getAbsolutePath());
 
         List<PrivateMessage> messages = new ArrayList<>();
-        for (String i : textManager.getMessages()){
+        for (String i : textManager.getPrivateMessages()){
             messages.add(new PrivateMessage(i));
         }
 

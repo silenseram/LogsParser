@@ -29,7 +29,7 @@ public class TextManager {
         }
     }
 
-    public List<String> getMessages(){
+    public List<String> getPrivateMessages(){
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             for (String current = reader.readLine(); current != null; current = reader

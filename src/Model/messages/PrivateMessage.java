@@ -40,6 +40,10 @@ public class PrivateMessage {
         return sender + " -> " + reciever + ": " + text;
     }
 
+    public String getAllMessageWithTime(){
+        return getStringTime() + " " + sender + " -> " + reciever + ": " + text;
+    }
+
     public String getSender() {
         return sender;
     }

@@ -47,7 +47,7 @@
                 <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
                     <items>
                         <Button fx:id="btn" mnemonicParsing="false" onAction="#click" text="Button" />
-                  <CheckBox fx:id="showTime" mnemonicParsing="false" text="Показывать время" />
+                  <CheckBox fx:id="showTime" mnemonicParsing="false" onAction="#onShowTimeAction" text="Показывать время" />
                   <CheckBox mnemonicParsing="false" text="L" />
                   <CheckBox mnemonicParsing="false" text="G" />
                   <CheckBox mnemonicParsing="false" text="Личные сообщения" />

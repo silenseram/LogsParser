@@ -39,7 +39,7 @@ public class Controller {
         LocalDate date = LocalDate.now();
         MCLogs logs = new MCLogs(date);
 
-        RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea, Thread.currentThread().getName());
+        RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea, Thread.currentThread().getName(), showTime.isSelected());
 
         Thread thread = new Thread(realtimeUpdater);
         thread.setName(RealtimeUpdater.threadName);
@@ -53,4 +53,9 @@ public class Controller {
     public void showTimeChange(ActionEvent event){
         //click(null);
     } //TODO
+
+    @FXML
+    private void onShowTimeAction(ActionEvent a) throws InterruptedException {
+        click(null);
+    }
 }
