@@ -10,18 +10,16 @@ import java.util.regex.Pattern;
 public class TextManager {
 
     //НЕНАВИЖУ РЕГУЛЯРКИ
-    private String strPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell)\\s.{1,32}\\s";
+    private String localMessaeStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell)\\s.{1,32}\\s";
     private Pattern pattern;
     private Matcher matcher;
     private File file;
 
     public TextManager(String filePath){
         file = new File(filePath);
-        pattern = Pattern.compile(strPattern);
+        pattern = Pattern.compile(localMessaeStringPattern);
     }
 
-
-    //является ли строка сообщением
     public boolean isMessage(String command){  return pattern.matcher(command).lookingAt();  }
 
     public void print(){

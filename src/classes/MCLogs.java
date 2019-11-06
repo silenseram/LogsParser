@@ -1,5 +1,7 @@
 package classes;
 
+import classes.messages.PrivateMessage;
+
 import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;

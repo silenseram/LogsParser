@@ -48,6 +48,9 @@
                     <items>
                         <Button fx:id="btn" mnemonicParsing="false" onAction="#click" text="Button" />
                   <CheckBox fx:id="showTime" mnemonicParsing="false" text="Показывать время" />
+                  <CheckBox mnemonicParsing="false" text="L" />
+                  <CheckBox mnemonicParsing="false" text="G" />
+                  <CheckBox mnemonicParsing="false" text="Личные сообщения" />
                     </items>
                 </ToolBar>
             <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" text="1234" wrapText="true" GridPane.rowIndex="1" />

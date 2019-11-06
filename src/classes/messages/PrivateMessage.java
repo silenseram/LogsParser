@@ -1,6 +1,4 @@
-package classes;
-
-import java.awt.*;
+package classes.messages;
 
 public class PrivateMessage {
 

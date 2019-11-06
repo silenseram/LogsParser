@@ -1,8 +1,8 @@
 package classes;
 
+import classes.messages.PrivateMessage;
 import javafx.scene.control.TextArea;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class RealtimeUpdater implements Runnable{
