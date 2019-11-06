@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/messages/ChatMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/fxml/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/MCLogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/messages/PrivateMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/RealtimeUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/RealtimeUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/TextManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +29,11 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1TCTmOyEiSbNM0ZNkO92exrInwQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Git-2.24.0-64-bit.exe" />
@@ -156,7 +150,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

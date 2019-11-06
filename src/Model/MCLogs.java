@@ -1,6 +1,6 @@
-package classes;
+package Model;
 
-import classes.messages.PrivateMessage;
+import Model.messages.PrivateMessage;
 
 import java.io.File;
 import java.time.LocalDate;

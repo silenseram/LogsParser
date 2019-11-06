@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
     <children>
         <GridPane layoutX="14.0" layoutY="14.0" prefHeight="669.0" prefWidth="992.0">
             <columnConstraints>
@@ -29,7 +29,7 @@
                     <menus>
                         <Menu mnemonicParsing="false" text="File">
                             <items>
-                                <MenuItem mnemonicParsing="false" onAction="#setOnAction" text="Close" />
+                                <MenuItem mnemonicParsing="false" text="Close" />
                             </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Edit">
@@ -53,7 +53,7 @@
                   <CheckBox mnemonicParsing="false" text="Личные сообщения" />
                     </items>
                 </ToolBar>
-            <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" text="1234" wrapText="true" GridPane.rowIndex="1" />
+            <TextArea fx:id="textArea" editable="false" onMouseExited="#onMouseExited" onScroll="#setOnScroll" prefHeight="200.0" prefWidth="200.0" scrollTop="1.7976931348623157E308" text="1234" wrapText="true" GridPane.rowIndex="1" />
             </children>
         </GridPane>
     </children>

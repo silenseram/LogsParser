@@ -1,4 +1,4 @@
-package classes.messages;
+package Model.messages;
 
 public class PrivateMessage {
 

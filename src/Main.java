@@ -1,9 +1,7 @@
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Group;
@@ -19,7 +17,7 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws IOException {
         Group group = new Group();
-        Parent content = FXMLLoader.load(getClass().getResource("GUI/fxml/MainWindow.fxml"));
+        Parent content = FXMLLoader.load(getClass().getResource("View/fxml/MainWindow.fxml"));
 
         BorderPane root = new BorderPane();
         root.setCenter(content);
