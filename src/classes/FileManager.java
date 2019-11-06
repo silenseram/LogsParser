@@ -14,10 +14,6 @@ public class FileManager{
     public static File downloadFile(String url, String fileName){
         String filepath = getFilePath(fileName);
         File f = new File(filepath);
-        if (f.exists() && !f.isDirectory()){
-            System.out.println("File already exist!");
-            return f;
-        }
         try {
 
             URL website = new URL(url);

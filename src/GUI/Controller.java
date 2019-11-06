@@ -23,20 +23,10 @@ public class Controller {
     @FXML
     private void click(ActionEvent event) throws InterruptedException {
         for (Thread t : Thread.getAllStackTraces().keySet()) {
-            if (t.getName().equals(RealtimeUpdater.threadName)) t.join();
+            if (t.getName().equals(RealtimeUpdater.threadName)) t.stop();
         }
 
-        LocalDate date = datePicker.getValue();
-        LocalDate nowDate = LocalDate.now();
-
-        if (date == null){
-            date = nowDate;
-        }
-
-        if (date.isAfter(nowDate)){
-            AllertWindow.dispplay("Ошибка!", "Выбранная дата меньше нынешней");
-            return;
-        }
+        LocalDate date = LocalDate.now();
         MCLogs logs = new MCLogs(date);
 
         RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea);
@@ -57,18 +47,6 @@ public class Controller {
     @FXML
     public void setOnAction(ActionEvent e){
         //TODO sth
-    }
-
-    @FXML
-    public void onDateChange(ActionEvent event){
-        LocalDate date = datePicker.getValue();
-        ConfigManager configManager = new ConfigManager();
-
-        configManager.setDay(date.getDayOfMonth());
-        configManager.setMonth(date.getMonthValue());
-        configManager.setYear(date.getYear());
-        configManager.updateProperty();
-        System.out.println(configManager.getDay());
     }
 
 }

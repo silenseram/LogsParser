@@ -7,7 +7,6 @@ import java.util.List;
 
 public class RealtimeUpdater implements Runnable{
 
-    private String filePath;
     private TextArea textArea;
     private MCLogs logs;
     public final static String threadName = "RealtimeHandler";
@@ -19,7 +18,6 @@ public class RealtimeUpdater implements Runnable{
 
     @Override
     public void run() {
-        textArea.setText("12");
         String text = "";
         while (true){
             List<PrivateMessage> messages = logs.getMessages();
@@ -32,7 +30,7 @@ public class RealtimeUpdater implements Runnable{
             text = "";
 
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
