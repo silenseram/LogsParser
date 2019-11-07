@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class TextManager {
 
     //НЕНАВИЖУ РЕГУЛЯРКИ
-    private String privateMessaeStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell|r)\\s.{1,32}\\s";
+    private String privateMessaeStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell|r|pm)\\s";
     private String localChatStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s\\[{1}L\\]{1}\\s.{1,32}\\s";
     private String globalChatStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s\\[{1}G\\]{1}\\s.{1,32}\\s";
 

@@ -13,7 +13,7 @@ public class PrivateMessage extends LogRecord {
     }
 
     public static String getMessageWithTime(String rawMessage){
-        String words[] = rawMessage.split("\\s");
+        String words[] = rawMessage.split(" ");
 
         String time = words[0];
 
@@ -28,17 +28,17 @@ public class PrivateMessage extends LogRecord {
             for (int i = 7; i < words.length; i++){
                 text += words[i] + " ";
             }
-            return time + " " + sender + "-> " + reciever + ": " + text;
+            return time + " " + sender + " -> " + reciever + ": " + text;
         } else {
             sender = words[1];
-            for (int i = 7; i < words.length; i++){
+            for (int i = 5; i < words.length; i++){
                 text += words[i] + " ";
             }
-            return time + " " + sender + " /r " + text;
+            return time + " " + sender + text;
         }
     }
     public static String getMessage(String rawMessage){
-        String words[] = rawMessage.split("\\s");
+        String words[] = rawMessage.split(" ");
 
         String time = words[0];
 
@@ -53,13 +53,13 @@ public class PrivateMessage extends LogRecord {
             for (int i = 7; i < words.length; i++){
                 text += words[i] + " ";
             }
-            return sender + "-> " + reciever + ": " + text;
+            return sender + " -> " + reciever + ": " + text;
         } else {
             sender = words[1];
-            for (int i = 7; i < words.length; i++){
+            for (int i = 5; i < words.length; i++){
                 text += words[i] + " ";
             }
-            return sender + " /r " + text;
+            return sender + " " + text;
         }
     }
 

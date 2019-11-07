@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/messages/LogRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/LogDisplayParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/PrivateMessage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
