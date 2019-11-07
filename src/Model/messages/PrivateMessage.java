@@ -1,6 +1,6 @@
 package Model.messages;
 
-public class PrivateMessage {
+public class PrivateMessage extends LogRecord {
 
     private String sender;
     private String reciever;
@@ -8,9 +8,9 @@ public class PrivateMessage {
     private String rawMessage;
     private String type;
 
-    int hours, minutes, seconds;
-
-    public PrivateMessage(String rawMessage) {}
+    public PrivateMessage(String rawMessage) {
+        this.rawMessage = rawMessage;
+    }
 
     public static String getMessageWithTime(String rawMessage){
         String words[] = rawMessage.split("\\s");
@@ -22,22 +22,19 @@ public class PrivateMessage {
         String sender = "";
         String reciever = "";
 
-        if (type != "r") {
+        if (!type.equals("/r")) {
             sender = words[1];
             reciever = words[6];
             for (int i = 7; i < words.length; i++){
                 text += words[i] + " ";
             }
-        } else if (type == "r"){
+            return time + " " + sender + "-> " + reciever + ": " + text;
+        } else {
             sender = words[1];
             for (int i = 7; i < words.length; i++){
                 text += words[i] + " ";
             }
-        }
-        if (type == "r"){
-            return time + " " + sender + "/r " + text;
-        } else{
-            return time + " " + sender + "-> " + reciever + ": " + text;
+            return time + " " + sender + " /r " + text;
         }
     }
     public static String getMessage(String rawMessage){
@@ -50,22 +47,19 @@ public class PrivateMessage {
         String sender = "";
         String reciever = "";
 
-        if (type != "r") {
+        if (!type.equals("/r")) {
             sender = words[1];
             reciever = words[6];
             for (int i = 7; i < words.length; i++){
                 text += words[i] + " ";
             }
-        } else if (type == "r"){
+            return sender + "-> " + reciever + ": " + text;
+        } else {
             sender = words[1];
             for (int i = 7; i < words.length; i++){
                 text += words[i] + " ";
             }
-        }
-        if (type == "r"){
-            return sender + "/r " + text;
-        } else{
-            return sender + "-> " + reciever + ": " + text;
+            return sender + " /r " + text;
         }
     }
 

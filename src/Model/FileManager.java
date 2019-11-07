@@ -34,7 +34,8 @@ public class FileManager{
 
             return f;
         } catch (Exception e) {
-            AllertWindow.dispplay("Ошибка!", "Невозможно загрузить файл");
+            //AllertWindow.dispplay("Ошибка!", "Невозможно загрузить файл");
+            e.printStackTrace();
             return null;
         }
     }

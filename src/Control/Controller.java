@@ -1,6 +1,7 @@
 package Control;
 
 import Model.*;
+import View.LogDisplayParams;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -10,6 +11,15 @@ import javafx.scene.input.MouseEvent;
 import java.time.LocalDate;
 
 public class Controller {
+
+    private LogDisplayParams displayParams;
+
+    private void setDisplayParams(){
+        if (displayParams == null){
+            displayParams = new LogDisplayParams(showTime, privateMessageCheckBox,
+                    globalCheckBox, localCheckBox);
+        }
+    }
 
     @FXML
     private void setOnScroll(ActionEvent event){
@@ -42,6 +52,9 @@ public class Controller {
         for (Thread t : Thread.getAllStackTraces().keySet()) {
             if (t.getName().equals(RealtimeUpdater.threadName)) t.stop();
         }
+
+        setDisplayParams();
+
         textArea.setScrollTop(Double.MAX_VALUE);
         LocalDate date = LocalDate.now();
         MCLogs logs = new MCLogs(date, showTime.isSelected(), localCheckBox.isSelected(), globalCheckBox.isSelected(), privateMessageCheckBox.isSelected());
