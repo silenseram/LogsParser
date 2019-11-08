@@ -54,7 +54,6 @@ public class RealtimeOutputUpdater implements Runnable{
             if (textArea.getText() != text)
                 textArea.setText(text);
             textArea.setScrollTop(Double.MAX_VALUE);
-            //System.out.println(text);
             text = "";
 
             try {

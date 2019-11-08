@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573228317022</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="visual fix">
+      <created>1573232371696</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573232371696</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -223,7 +230,8 @@
     <MESSAGE value="add time for all logs" />
     <MESSAGE value="fixed some multithread bugs" />
     <MESSAGE value="fix first file load" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix first file load" />
+    <MESSAGE value="visual fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="visual fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

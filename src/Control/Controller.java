@@ -28,7 +28,7 @@ public class Controller {
 
         if (!ThreadController.isThreadExist(RealtimeFileUpdater.threadName)) {
             ConfigManager configManager = new ConfigManager();
-            System.out.println("creating fileupd thread");
+
             LocalDate date = LocalDate.now();
             LinkManager linkManager = new LinkManager(configManager.getServerName(), date);
 
@@ -44,7 +44,6 @@ public class Controller {
     private void setTextUpdater(){
         if (ThreadController.isThreadExist(RealtimeOutputUpdater.threadName))
             return;
-        System.out.println("creating textupd thread");
 
         textArea.setScrollTop(Double.MAX_VALUE);
         LocalDate date = LocalDate.now();

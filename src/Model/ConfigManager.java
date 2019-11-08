@@ -82,7 +82,5 @@ public class ConfigManager {
 
     public String getFilePath() { return filePath; }
 
-    public String getServerName(){
-        return "EasyTech";
-    }
+    public String getServerName(){ return properties.getProperty("server"); }
 }

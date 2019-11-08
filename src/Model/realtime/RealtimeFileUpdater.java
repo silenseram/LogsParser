@@ -40,14 +40,10 @@ public class RealtimeFileUpdater implements Runnable {
             }else {
                 FileManager.downloadFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
             }
-
-
-
-            System.out.println("file load succes");
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
-                System.out.println("Realtimefileupdater cant sleep");
+                e.printStackTrace();
             }
         }
     }
