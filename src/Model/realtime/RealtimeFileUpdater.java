@@ -32,10 +32,15 @@ public class RealtimeFileUpdater implements Runnable {
                 return;
 
             File oldFile = new File(FileManager.getFilePath(TextUtils.getStringDate(localDate)));
-            File newFile = FileManager.downloadFile(linkManager.getUrl(), "1");
+            if (oldFile.exists()) {
+                File newFile = FileManager.downloadFile(linkManager.getUrl(), "1");
 
-            oldFile.delete();
-            newFile.renameTo(oldFile);
+                oldFile.delete();
+                newFile.renameTo(oldFile);
+            }else {
+                FileManager.downloadFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
+            }
+
 
 
             System.out.println("file load succes");
