@@ -1,5 +1,10 @@
 package Model;
 
+import Model.messages.ChatMessage;
+import Model.messages.LogRecord;
+import Model.messages.PrivateMessage;
+import View.LogDisplayParams;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -39,17 +44,18 @@ public class TextManager {
         return localChatPattern.matcher(command).lookingAt();
     }
 
-    public List<String> getNeedStrings(boolean isLocalEnabled, boolean isGlobalEnabled, boolean isPrivateEnabled){
+    public List<String> getSelectedLogs(LogDisplayParams params){
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             for (String current = reader.readLine(); current != null; current = reader
                     .readLine()) {
-                if (isPrivateEnabled && isPrivateMessage(current)) {
-                    result.add(current);
-                } else if (isLocalEnabled && islocalChatMessage(current)){
-                    result.add(current);
-                } else if (isGlobalEnabled && isGlobalChatMessage(current)){
-                    result.add(current);
+                String toAdd;
+                if (params.isShowPrivateMessages() && isPrivateMessage(current)) {
+                    result.add(PrivateMessage.getMessage(current, params.isShowTime()));
+                } else if (params.isShowLocalMessages() && islocalChatMessage(current)){
+                    result.add(ChatMessage.getMessage(current, params.isShowTime()));
+                } else if (params.isShowGlobalMessages() && isGlobalChatMessage(current)){
+                    result.add(ChatMessage.getMessage(current, params.isShowTime()));
                 }
             }
         } catch (IOException e) {

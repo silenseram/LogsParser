@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class Controller {
@@ -57,8 +58,7 @@ public class Controller {
 
         textArea.setScrollTop(Double.MAX_VALUE);
         LocalDate date = LocalDate.now();
-        MCLogs logs = new MCLogs(date, showTime.isSelected(), localCheckBox.isSelected(), globalCheckBox.isSelected(), privateMessageCheckBox.isSelected());
-
+        MCLogs logs = new MCLogs(date, displayParams);
         RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea, Thread.currentThread().getName(), showTime.isSelected());
 
         Thread thread = new Thread(realtimeUpdater);

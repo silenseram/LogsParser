@@ -16,17 +16,14 @@ public class FileManager{
     public static File downloadFile(String url, String fileName){
         String filepath = getFilePath(fileName);
         File f = new File(filepath);
+
         try {
 
             URL website = new URL(url);
-            //System.out.println(url + " <---> " + filepath);
-
             ReadableByteChannel channel = Channels.newChannel(website.openStream());
             FileOutputStream stream = new FileOutputStream(filepath);
 
             stream.getChannel().transferFrom(channel, 0, Long.MAX_VALUE);
-
-            //System.out.println("Download successfull");
 
             //idk
             channel.close();

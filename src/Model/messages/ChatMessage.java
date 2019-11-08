@@ -1,25 +1,20 @@
 package Model.messages;
 
 public class ChatMessage extends LogRecord {
-    private String type;
-    private String rawLog;
 
-
-    public ChatMessage(String raw){
-        this.rawLog = raw;
-    }
-
-    public String getAllLogWithTime(){
-        return rawLog;
-    }
-
-    public String getAllLog(){
-        String words[] = rawLog.split(" ");
-        String result = "";
-
-        for (int i = 1; i < result.length(); i++){
-            result += words[i] + " ";
+    public static String getMessage(String rawMsg, boolean showTime){
+        String words[] = rawMsg.split(" ");
+        String text = "";
+        String time = "";
+        if (showTime){
+            time = words[0] + " ";
         }
-        return result;
+
+        for (int i = 1; i < words.length; i++){
+            text += words[i] + " ";
+        }
+
+        return time + text;
     }
+
 }
