@@ -53,7 +53,7 @@
                   <CheckBox fx:id="privateMessageCheckBox" mnemonicParsing="false" onAction="#onPrivateMessageCheckBoxAction" text="Личные сообщения" />
                     </items>
                 </ToolBar>
-            <TextArea fx:id="textArea" editable="false" onMouseExited="#onMouseExited" onScroll="#setOnScroll" prefHeight="200.0" prefWidth="200.0" scrollTop="1.7976931348623157E308" text="1234" wrapText="true" GridPane.rowIndex="1" />
+            <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" scrollTop="1.7976931348623157E308" text="1234" wrapText="true" GridPane.rowIndex="1" />
             </children>
         </GridPane>
     </children>

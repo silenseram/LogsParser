@@ -7,16 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/LogsParser_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TextUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/realtime/RealtimeFileUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/realtime/ThreadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/DateManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/messages/LogRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/LogRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/PrivateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/RealtimeUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/realtime/RealtimeOutputUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573098324158</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add time for all logs">
+      <created>1573186006129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573186006129</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -207,7 +214,8 @@
     <MESSAGE value="fix the project" />
     <MESSAGE value="add option to show time" />
     <MESSAGE value="fixed answer message" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed answer message" />
+    <MESSAGE value="add time for all logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="add time for all logs" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

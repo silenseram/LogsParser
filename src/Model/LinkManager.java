@@ -1,17 +1,19 @@
 package Model;
 
+import java.time.LocalDate;
+
 public class LinkManager {
     private String serverName;
-    DateManager dateManager;
+    private LocalDate localDate;
 
-    public LinkManager(String serverName, DateManager dateManager) {
+    public LinkManager(String serverName, LocalDate date) {
         this.serverName = serverName;
-        this.dateManager = dateManager;
+        this.localDate = date;
     }
 
     public String getUrl(){
-        return "https://logs." + getServerNumber() + ".mcskill.ru/p/" + serverName + "_Public_Logs/" + dateManager.getStringDate() + ".txt";
-
+    String date = TextUtils.getStringDate(localDate);
+    return "https://logs." + getServerNumber() + ".mcskill.ru/p/" + serverName + "_Public_Logs/" + date + ".txt";
     }
 
     private String getServerNumber(){

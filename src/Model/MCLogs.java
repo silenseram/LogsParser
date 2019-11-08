@@ -10,9 +10,7 @@ import java.util.List;
 
 public class MCLogs {
 
-    private int day;
-    private int month;
-    private int year;
+    private LocalDate localDate;
     private String server;
     ConfigManager configManager;
     TextManager textManager;
@@ -20,30 +18,19 @@ public class MCLogs {
 
     public MCLogs() {
         configManager = new ConfigManager();
-        this.day = configManager.getDay();
-        this.month = configManager.getMonth();
-        this.year = configManager.getYear();
         this.server = configManager.getServerName();
     }
 
     public MCLogs(LocalDate date, LogDisplayParams params) {
         this.params = params;
-
+        this.localDate = date;
         configManager = new ConfigManager();
-        this.day = date.getDayOfMonth();
-        this.month = date.getMonthValue();
-        this.year = date.getYear();
         this.server = configManager.getServerName();
     }
 
     public List<String> getRequestedLines(){
 
-        DateManager dateManager = new DateManager(day, month, year);
-        LinkManager linkManager = new LinkManager(server, dateManager);
-
-        File file = FileManager.downloadFile(linkManager.getUrl(), dateManager.getStringDate());
-        if (!file.exists())
-            return null;
+        File file = new File(FileManager.getFilePath(TextUtils.getStringDate(localDate)));
 
         TextManager textManager = new TextManager(file.getAbsolutePath());
 

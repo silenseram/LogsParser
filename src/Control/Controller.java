@@ -1,15 +1,17 @@
 package Control;
 
 import Model.*;
+import Model.realtime.RealtimeFileUpdater;
+import Model.realtime.RealtimeOutputUpdater;
+import Model.realtime.ThreadController;
 import View.LogDisplayParams;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
-import java.io.File;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Controller {
 
@@ -22,57 +24,60 @@ public class Controller {
         }
     }
 
-    @FXML
-    private void setOnScroll(ActionEvent event){
-        System.out.println(1);
+    private void setFileUpdater(){
+
+        if (!ThreadController.isThreadExist(RealtimeFileUpdater.threadName)) {
+            ConfigManager configManager = new ConfigManager();
+            System.out.println("creating fileupd thread");
+            LocalDate date = LocalDate.now();
+            LinkManager linkManager = new LinkManager(configManager.getServerName(), date);
+
+
+            RealtimeFileUpdater fileUpdater = new RealtimeFileUpdater(linkManager, Thread.currentThread().getName(), LocalDate.now());
+            Thread thread = new Thread(fileUpdater);
+            thread.setName(RealtimeFileUpdater.threadName);
+
+            thread.start();
+        }
     }
 
+    private void setTextUpdater(){
+        if (ThreadController.isThreadExist(RealtimeOutputUpdater.threadName))
+            return;
+        System.out.println("creating textupd thread");
+
+        textArea.setScrollTop(Double.MAX_VALUE);
+        LocalDate date = LocalDate.now();
+        MCLogs logs = new MCLogs(date, displayParams);
+        RealtimeOutputUpdater realtimeOutputUpdater = new RealtimeOutputUpdater(logs, textArea, Thread.currentThread().getName(),
+                showTime.isSelected());
+
+        Thread thread = new Thread(realtimeOutputUpdater);
+        thread.setName(RealtimeOutputUpdater.threadName);
+        thread.start();
+    }
     @FXML
     private Button btn;
-
     @FXML
     private CheckBox localCheckBox;
     @FXML
     private CheckBox globalCheckBox;
     @FXML
     private CheckBox privateMessageCheckBox;
-
     @FXML
     private DatePicker datePicker;
-
     @FXML
     private CheckBox showTime;
 
     @FXML
-    private void onMouseExited(MouseEvent r){
-        textArea.setScrollTop(Double.MAX_VALUE); //DOESNT WORK, TODO
-    }
-
-    @FXML
     public void click(ActionEvent event) throws InterruptedException {
-        for (Thread t : Thread.getAllStackTraces().keySet()) {
-            if (t.getName().equals(RealtimeUpdater.threadName)) t.stop();
-        }
-
         setDisplayParams();
-
-        textArea.setScrollTop(Double.MAX_VALUE);
-        LocalDate date = LocalDate.now();
-        MCLogs logs = new MCLogs(date, displayParams);
-        RealtimeUpdater realtimeUpdater = new RealtimeUpdater(logs, textArea, Thread.currentThread().getName(), showTime.isSelected());
-
-        Thread thread = new Thread(realtimeUpdater);
-        thread.setName(RealtimeUpdater.threadName);
-        thread.start();
+        setFileUpdater();
+        setTextUpdater();
     }
 
     @FXML
     private TextArea textArea;
-
-    @FXML
-    public void showTimeChange(ActionEvent event){
-        //click(null);
-    } //TODO
 
     @FXML
     private void onShowTimeAction(ActionEvent a) throws InterruptedException {
