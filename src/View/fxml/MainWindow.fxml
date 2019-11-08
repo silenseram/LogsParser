@@ -2,49 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
     <children>
-        <GridPane layoutX="14.0" layoutY="14.0" prefHeight="669.0" prefWidth="992.0">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="803.0" minWidth="10.0" prefWidth="803.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="0.0" prefWidth="0.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints maxHeight="124.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="474.0" minHeight="10.0" prefHeight="474.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="71.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <MenuBar prefHeight="25.0" prefWidth="509.0">
-                    <menus>
-                        <Menu mnemonicParsing="false" text="File">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Close" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Edit">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="Delete" />
-                            </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
-                            <items>
-                                <MenuItem mnemonicParsing="false" text="About" />
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
-                <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
+      <BorderPane prefHeight="683.0" prefWidth="1006.0">
+         <center>
+            <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" scrollTop="1.7976931348623157E308" text="1234" wrapText="true" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <items>
                         <Button fx:id="btn" mnemonicParsing="false" onAction="#click" text="Update" />
                   <CheckBox fx:id="showTime" mnemonicParsing="false" onAction="#onShowTimeAction" text="Показывать время" />
@@ -53,8 +23,7 @@
                   <CheckBox fx:id="privateMessageCheckBox" mnemonicParsing="false" onAction="#onPrivateMessageCheckBoxAction" text="Личные сообщения" />
                     </items>
                 </ToolBar>
-            <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" scrollTop="1.7976931348623157E308" text="1234" wrapText="true" GridPane.rowIndex="1" />
-            </children>
-        </GridPane>
+         </bottom>
+      </BorderPane>
     </children>
 </AnchorPane>
