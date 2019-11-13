@@ -44,7 +44,7 @@ public class TextManager {
         return localChatPattern.matcher(command).lookingAt();
     }
 
-    public List<String> getSelectedLogs(LogDisplayParams params){
+    public List<String> getSelectedLogs(LogDisplayParams params) throws FileNotFoundException{
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             for (String current = reader.readLine(); current != null; current = reader

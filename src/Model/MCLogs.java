@@ -4,6 +4,7 @@ import Model.messages.PrivateMessage;
 import View.LogDisplayParams;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,27 +18,24 @@ public class MCLogs {
     private LogDisplayParams params;
 
     public MCLogs() {
-        configManager = new ConfigManager();
+        configManager = new ConfigManager("config.properties");
         this.server = configManager.getServerName();
     }
 
     public MCLogs(LocalDate date, LogDisplayParams params) {
         this.params = params;
         this.localDate = date;
-        configManager = new ConfigManager();
+        configManager = new ConfigManager("config.properties");
         this.server = configManager.getServerName();
     }
 
-    public List<String> getRequestedLines(){
+    public List<String> getRequestedLines() throws FileNotFoundException {
 
-        File file = new File(FileManager.getFilePath(TextUtils.getStringDate(localDate)));
-
+        File file = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
         TextManager textManager = new TextManager(file.getAbsolutePath());
 
         return textManager.getSelectedLogs(params);
     }
 
-    public String getNowFilePath(){
-        return configManager.getFilePath();
-    }
+    public String getNowFilePath(){ return configManager.getFilePath();  }
 }

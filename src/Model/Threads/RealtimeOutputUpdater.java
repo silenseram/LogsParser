@@ -1,10 +1,10 @@
-package Model.realtime;
+package Model.Threads;
 
 import Model.MCLogs;
-import Model.messages.PrivateMessage;
 import javafx.scene.control.TextArea;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class RealtimeOutputUpdater implements Runnable{
@@ -38,7 +38,12 @@ public class RealtimeOutputUpdater implements Runnable{
             if (!isMainThreadExist)
                 return;
 
-            List<String> messages = logs.getRequestedLines();
+            List<String> messages = null;
+            try {
+                messages = logs.getRequestedLines();
+            } catch (FileNotFoundException e) {
+                continue;
+            }
             if (messages == null) {
                 continue;
             }

@@ -1,4 +1,4 @@
-package Model.realtime;
+package Model.Threads;
 
 public class ThreadController {
 

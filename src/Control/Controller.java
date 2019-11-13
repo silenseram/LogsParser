@@ -1,17 +1,19 @@
 package Control;
 
 import Model.*;
-import Model.realtime.RealtimeFileUpdater;
-import Model.realtime.RealtimeOutputUpdater;
-import Model.realtime.ThreadController;
+import Model.Threads.RealtimeFileUpdater;
+import Model.Threads.RealtimeOutputUpdater;
+import Model.Threads.ServerListUpdate;
+import Model.Threads.ThreadController;
 import View.LogDisplayParams;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
+import java.io.File;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Controller {
 
@@ -27,7 +29,7 @@ public class Controller {
     private void setFileUpdater(){
 
         if (!ThreadController.isThreadExist(RealtimeFileUpdater.threadName)) {
-            ConfigManager configManager = new ConfigManager();
+            ConfigManager configManager = new ConfigManager("config.properties");
 
             LocalDate date = LocalDate.now();
             LinkManager linkManager = new LinkManager(configManager.getServerName(), date);
@@ -67,6 +69,9 @@ public class Controller {
     private DatePicker datePicker;
     @FXML
     private CheckBox showTime;
+    @FXML
+    private ComboBox comboBox;
+
 
     @FXML
     public void click(ActionEvent event) throws InterruptedException {
@@ -94,5 +99,17 @@ public class Controller {
     @FXML
     private void onLocalCheckBoxAction(ActionEvent a) throws InterruptedException{
         click(null);
+    }
+
+    @FXML
+    private void onShowComboBox(Event a){
+        System.out.println("1");
+        if (ThreadController.isThreadExist(ServerListUpdate.threadName))
+            return;
+        comboBox.getItems().add(1);
+
+        ServerListUpdate updater = new ServerListUpdate(comboBox, FileManager.getLogFilePath("config.properties"));
+        Thread thread = new Thread(updater);
+        thread.start();
     }
 }

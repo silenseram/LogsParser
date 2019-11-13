@@ -1,4 +1,4 @@
-package Model.realtime;
+package Model.Threads;
 import Model.FileManager;
 import Model.LinkManager;
 import Model.TextUtils;
@@ -20,6 +20,7 @@ public class RealtimeFileUpdater implements Runnable {
         this.localDate = localDate;
     }
 
+
     @Override
     public void run() {
         while (true) {
@@ -31,7 +32,7 @@ public class RealtimeFileUpdater implements Runnable {
             if (!isMainThreadExist)
                 return;
 
-            File oldFile = new File(FileManager.getFilePath(TextUtils.getStringDate(localDate)));
+            File oldFile = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
             if (oldFile.exists()) {
                 File newFile = FileManager.downloadFile(linkManager.getUrl(), "1");
 

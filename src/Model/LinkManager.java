@@ -18,7 +18,8 @@ public class LinkManager {
 
     private String getServerNumber(){
         switch (serverName){
-            case "EasyTech": return "s1";
+            case "EasyTech":
+                return "s1";
             case "TechnoRPG":
                 return "s1";
             case "Galaxycraft":

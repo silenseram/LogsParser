@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="LogsParser:jar" />
+      <artifact name="unnamed" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TryingJar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servers.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LogsParser_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LogsParser_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogsParser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LogsParser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/realtime/RealtimeFileUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/RealtimeFileUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/realtime/RealtimeOutputUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/realtime/ThreadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/ThreadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +58,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../forTest" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15711462" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -66,18 +82,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-13.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LogsParser" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="java.Main" />
-      <module name="LogsParser" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\IdeaProjects\LogsParser\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Maorus\IdeaProjects\LogsParser\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -106,7 +117,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -197,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573232371696</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="release build">
+      <created>1573238387135</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573238387135</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -231,18 +248,24 @@
     <MESSAGE value="fixed some multithread bugs" />
     <MESSAGE value="fix first file load" />
     <MESSAGE value="visual fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="visual fix" />
+    <MESSAGE value="release build" />
+    <option name="LAST_COMMIT_MESSAGE" value="release build" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Control/Controller.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="filePath" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
