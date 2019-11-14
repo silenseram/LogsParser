@@ -22,7 +22,7 @@
                   <CheckBox fx:id="localCheckBox" mnemonicParsing="false" onAction="#onLocalCheckBoxAction" text="L" />
                   <CheckBox fx:id="globalCheckBox" mnemonicParsing="false" onAction="#onGlobalCheckBoxAction" text="G" />
                   <CheckBox fx:id="privateMessageCheckBox" mnemonicParsing="false" onAction="#onPrivateMessageCheckBoxAction" text="Личные сообщения" />
-                  <ComboBox fx:id="comboBox" onShowing="#onShowComboBox" prefWidth="150.0" promptText="Сервер" />
+                  <ComboBox fx:id="comboBox" onAction="#comboBoxOnAction" onShowing="#onShowComboBox" prefWidth="150.0" promptText="Сервер" />
                     </items>
                 </ToolBar>
          </bottom>

@@ -4,26 +4,30 @@ import View.AllertWindow;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.rmi.server.ExportException;
 
 public class FileManager{
 
     private String url;
     private String fileName;
 
-    public static File downloadFile(String url, String fileName){
+    public static File updateFile(String url, String fileName){
         String filepath = getLogFilePath(fileName);
         String tempFile = getLogFilePath("1");
 
         File tf = new File(tempFile);
         File f = new File(filepath);
+        if (!f.exists()) {
+            downloadFile(url, fileName);
+        }
 
         try {
 
             URL website = new URL(url);
-            Integer t = 1;
             ReadableByteChannel channel = Channels.newChannel(website.openStream());
             FileOutputStream stream = new FileOutputStream(tempFile);
 
@@ -47,7 +51,7 @@ public class FileManager{
     }
 
     public static String getConfigFilePath(String fileName){
-        return "C://Users//" + System.getProperty("user.name") + "//LogsParser//config//" + fileName + ".config";
+        return "C://Users//" + System.getProperty("user.name") + "//LogsParser//config//" + fileName + ".properties";
     }
 
     private static boolean swapName(File tmp1, File tmp2) {
@@ -61,5 +65,19 @@ public class FileManager{
 
         return (tmp1.renameTo(swapFile1) && tmp2.renameTo(swapFile2));
 
+    }
+
+    private static File downloadFile(String url, String filename){
+       File f = new File(getLogFilePath(filename));
+       try {
+           URL website = new URL(url);
+           ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+           FileOutputStream fos = new FileOutputStream(f);
+           fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+       } catch (Exception e){
+           e.printStackTrace();
+       }
+
+       return f;
     }
 }

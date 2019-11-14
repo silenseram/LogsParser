@@ -70,7 +70,7 @@ public class Controller {
     @FXML
     private CheckBox showTime;
     @FXML
-    private ComboBox comboBox;
+    private ComboBox<String> comboBox;
 
 
     @FXML
@@ -106,10 +106,16 @@ public class Controller {
         System.out.println("1");
         if (ThreadController.isThreadExist(ServerListUpdate.threadName))
             return;
-        comboBox.getItems().add(1);
 
-        ServerListUpdate updater = new ServerListUpdate(comboBox, FileManager.getLogFilePath("config.properties"));
+        ServerListUpdate updater = new ServerListUpdate(comboBox, FileManager.getConfigFilePath("servers"));
         Thread thread = new Thread(updater);
         thread.start();
+    }
+
+    @FXML
+    private void comboBoxOnAction(Event e){
+        if (comboBox.getValue() == null)
+            comboBox.getSelectionModel().select(0);
+        //updateServer(); TODO
     }
 }
