@@ -18,14 +18,14 @@ public class MCLogs {
     private LogDisplayParams params;
 
     public MCLogs() {
-        configManager = new ConfigManager("config.properties");
+        configManager = new ConfigManager("config");
         this.server = configManager.getServerName();
     }
 
     public MCLogs(LocalDate date, LogDisplayParams params) {
         this.params = params;
         this.localDate = date;
-        configManager = new ConfigManager("config.properties");
+        configManager = new ConfigManager("config");
         this.server = configManager.getServerName();
     }
 
@@ -37,5 +37,5 @@ public class MCLogs {
         return textManager.getSelectedLogs(params);
     }
 
-    public String getNowFilePath(){ return configManager.getFilePath();  }
+    public String getNowFilePath(){ return FileManager.getLogFilePath(TextUtils.getStringDate(localDate));  }
 }

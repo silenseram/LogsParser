@@ -7,6 +7,7 @@ public class LinkManager {
     private LocalDate localDate;
 
     public LinkManager(String serverName, LocalDate date) {
+        System.out.println(serverName);
         this.serverName = serverName;
         this.localDate = date;
     }

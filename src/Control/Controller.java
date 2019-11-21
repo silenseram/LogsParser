@@ -14,6 +14,8 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.File;
 import java.time.LocalDate;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Controller {
 
@@ -29,17 +31,14 @@ public class Controller {
     private void setFileUpdater(){
 
         if (!ThreadController.isThreadExist(RealtimeFileUpdater.threadName)) {
-            ConfigManager configManager = new ConfigManager("config.properties");
+            ConfigManager configManager = new ConfigManager("config");
 
             LocalDate date = LocalDate.now();
             LinkManager linkManager = new LinkManager(configManager.getServerName(), date);
 
 
             RealtimeFileUpdater fileUpdater = new RealtimeFileUpdater(linkManager, Thread.currentThread().getName(), LocalDate.now());
-            Thread thread = new Thread(fileUpdater);
-            thread.setName(RealtimeFileUpdater.threadName);
-
-            thread.start();
+            exec.submit(fileUpdater);
         }
     }
 
@@ -53,10 +52,11 @@ public class Controller {
         RealtimeOutputUpdater realtimeOutputUpdater = new RealtimeOutputUpdater(logs, textArea, Thread.currentThread().getName(),
                 showTime.isSelected());
 
-        Thread thread = new Thread(realtimeOutputUpdater);
-        thread.setName(RealtimeOutputUpdater.threadName);
-        thread.start();
+        exec.submit(realtimeOutputUpdater);
     }
+
+    private ExecutorService exec = Executors.newFixedThreadPool(2);
+
     @FXML
     private Button btn;
     @FXML

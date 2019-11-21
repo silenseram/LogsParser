@@ -2,6 +2,7 @@ package Model;
 
 import org.w3c.dom.ls.LSOutput;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Properties;
@@ -15,7 +16,7 @@ public class ConfigManager {
     private String configFilePath;
 
     public ConfigManager(String configFilename) {
-        this.configFilePath = "C://Users//" + System.getProperty("user.name") + "//LogsParser//config//" + configFilename;
+        this.configFilePath = FileManager.getConfigFilePath(configFilename);
         properties = new Properties();
         getProperty();
     }
@@ -32,8 +33,6 @@ public class ConfigManager {
             e.printStackTrace();
         }
     }
-
-    public String getFilePath() { return filePath; }
 
     public String getServerName(){ return server; }
 }

@@ -9,10 +9,11 @@
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Threads/RealtimeFileUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/RealtimeFileUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

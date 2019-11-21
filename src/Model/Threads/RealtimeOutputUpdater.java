@@ -21,11 +21,13 @@ public class RealtimeOutputUpdater implements Runnable{
         this.logs = logs;
         this.textArea = textArea;
         this.mainThreadName = mainThreadName;
+        //System.out.println(logs.getNowFilePath());
         this.file = new File(logs.getNowFilePath());
     }
 
     @Override
     public void run() {
+        Thread.currentThread().setName(RealtimeOutputUpdater.threadName);
         String text = "";
         while (true){
 

@@ -23,6 +23,7 @@ public class RealtimeFileUpdater implements Runnable {
 
     @Override
     public void run() {
+        Thread.currentThread().setName(RealtimeFileUpdater.threadName);
         while (true) {
 
             boolean isMainThreadExist = false;
