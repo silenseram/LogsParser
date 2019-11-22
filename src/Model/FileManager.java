@@ -74,6 +74,7 @@ public class FileManager{
            ReadableByteChannel rbc = Channels.newChannel(website.openStream());
            FileOutputStream fos = new FileOutputStream(f);
            fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+           fos.close();
        } catch (Exception e){
            e.printStackTrace();
        }

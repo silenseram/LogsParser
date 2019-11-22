@@ -1,10 +1,14 @@
 package Model.Threads;
 
+import Model.ConfigManager;
+import Model.FileUpdater;
+import Model.LinkManager;
 import Model.MCLogs;
 import javafx.scene.control.TextArea;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 import java.util.List;
 
 public class RealtimeOutputUpdater implements Runnable{
@@ -15,14 +19,14 @@ public class RealtimeOutputUpdater implements Runnable{
     private String mainThreadName;
     private boolean showTime;
     private File file;
+    private FileUpdater fileUpdater;
 
-    public RealtimeOutputUpdater(MCLogs logs, TextArea textArea, String mainThreadName, boolean showTime) {
-        this.showTime = showTime;
+    public RealtimeOutputUpdater(MCLogs logs, TextArea textArea, String mainThreadName, LocalDate localDate, ConfigManager configManager) {
         this.logs = logs;
         this.textArea = textArea;
         this.mainThreadName = mainThreadName;
-        //System.out.println(logs.getNowFilePath());
         this.file = new File(logs.getNowFilePath());
+        fileUpdater = new FileUpdater(new LinkManager(configManager.getServerName(), localDate), localDate); // mb dich
     }
 
     @Override
@@ -40,7 +44,9 @@ public class RealtimeOutputUpdater implements Runnable{
             if (!isMainThreadExist)
                 return;
 
-            List<String> messages = null;
+            fileUpdater.update();
+
+            List<String> messages;
             try {
                 messages = logs.getRequestedLines();
             } catch (FileNotFoundException e) {
@@ -51,23 +57,18 @@ public class RealtimeOutputUpdater implements Runnable{
             }
 
             for (String i : messages){
-                if (showTime) {
-                    text += i + "\n";
-                } else {
-                    text += i + "\n";
-                }
+//                if (showTime) {
+//                    text += i + "\n";
+//                } else {
+//                    text += i + "\n";
+//                }
+                text += i + "\n";
             }
 
-            if (textArea.getText() != text)
+            if (textArea.getText() != text && !text.equals(""))
                 textArea.setText(text);
             textArea.setScrollTop(Double.MAX_VALUE);
             text = "";
-
-            try {
-                Thread.sleep(30);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
         }
     }

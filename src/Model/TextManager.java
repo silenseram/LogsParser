@@ -58,19 +58,7 @@ public class TextManager {
                     result.add(ChatMessage.getMessage(current, params.isShowTime()));
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    public List<String> getAllLines(){
-        List<String> result = new LinkedList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            for (String current = reader.readLine(); current != null; current = reader.readLine()) {
-                result.add(current);
-            }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;

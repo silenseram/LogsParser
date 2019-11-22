@@ -1,5 +1,8 @@
 package Model.Threads;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ThreadController {
 
     public static void killThread(String threadName){
@@ -14,5 +17,13 @@ public class ThreadController {
                 return true;
         }
         return false;
+    }
+
+    public static List<String> getAllThreadNames() {
+        List<String> threads = new ArrayList<>();
+        for (Thread t : Thread.getAllStackTraces().keySet()){
+            threads.add(t.getName());
+        }
+        return threads;
     }
 }
