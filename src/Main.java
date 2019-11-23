@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Group;
 
+import java.io.File;
 import java.io.IOException;
 public class Main extends Application{
 
@@ -16,6 +17,7 @@ public class Main extends Application{
 
     @Override
     public void start(Stage stage) throws IOException {
+        Initializer.init();
         Group group = new Group();
         Parent content = FXMLLoader.load(getClass().getResource("View/fxml/MainWindow.fxml"));
 

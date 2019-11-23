@@ -104,8 +104,6 @@ public class Controller {
 
     @FXML
     private void comboBoxOnAction(Event e) throws InterruptedException {
-        System.out.println(comboBox.getValue());
-
         ConfigManager servers = new ConfigManager("servers");
         configManager.setProperty("server", servers.getProperty(comboBox.getValue()));
         configManager.updateProperties();
