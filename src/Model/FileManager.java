@@ -15,37 +15,6 @@ public class FileManager{
     private String url;
     private String fileName;
 
-    public static File updateFile(String url, String fileName){
-        String filepath = getLogFilePath(fileName);
-        String tempFile = getLogFilePath("1");
-
-        File tf = new File(tempFile);
-        File f = new File(filepath);
-        if (!f.exists()) {
-            downloadFile(url, fileName);
-        }
-
-        try {
-
-            URL website = new URL(url);
-            ReadableByteChannel channel = Channels.newChannel(website.openStream());
-            FileOutputStream stream = new FileOutputStream(tempFile);
-
-            stream.getChannel().transferFrom(channel, 0, Long.MAX_VALUE);
-            swapName(tf, f);
-
-            //idk
-            channel.close();
-            stream.close();
-
-            return f;
-        } catch (Exception e) {
-            //AllertWindow.dispplay("Ошибка!", "Невозможно загрузить файл");
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public static String getLogFilePath(String fileName){
         return "C://Users//" + System.getProperty("user.name") + "//LogsParser//txtlogs//" + fileName + ".txt";
     }
@@ -67,14 +36,17 @@ public class FileManager{
 
     }
 
-    private static File downloadFile(String url, String filename){
+    public static File downloadFile(String url, String filename){
        File f = new File(getLogFilePath(filename));
        try {
            URL website = new URL(url);
+           //System.out.println(url);
            ReadableByteChannel rbc = Channels.newChannel(website.openStream());
            FileOutputStream fos = new FileOutputStream(f);
            fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+
            fos.close();
+           rbc.close();
        } catch (Exception e){
            e.printStackTrace();
        }

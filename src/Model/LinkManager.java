@@ -7,14 +7,30 @@ public class LinkManager {
     private LocalDate localDate;
 
     public LinkManager(String serverName, LocalDate date) {
-        System.out.println(serverName);
+        //System.out.println(serverName);
         this.serverName = serverName;
         this.localDate = date;
     }
 
     public String getUrl(){
     String date = TextUtils.getStringDate(localDate);
-    return "https://logs." + getServerNumber() + ".mcskill.ru/p/" + serverName + "_Public_Logs/" + date + ".txt";
+    if (getServerNumber().equals("s1")) {
+        return "https://logs." + getServerNumber() + ".mcskill.ru/p/" + serverName + "_Public_Logs/" + date + ".txt";
+    }
+    if (getServerNumber().equals("s4")) {
+        return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
+    }
+    if (getServerNumber().equals("s8")) {
+        return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "/" + date + ".txt";
+    }
+    if (getServerNumber().equals("s7")) {
+        return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
+    }
+    if (getServerName().equals("IventServer2")) {
+        return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
+    }
+
+    return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
     }
 
     private String getServerNumber(){
@@ -34,6 +50,8 @@ public class LinkManager {
             case "Hitech112":
                 return "s4";
             case "IventServer2":
+                return "s6";
+            case "TechnomagicRPG":
                 return "s6";
             case "Magiccraft":
                 return "s6";

@@ -14,19 +14,6 @@ public class FileUpdater {
     }
 
     public void update(){
-        File oldFile = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
-        if (oldFile.exists()) {
-            File newFile = FileManager.updateFile(linkManager.getUrl(), "1");
-
-            oldFile.delete();
-            newFile.renameTo(oldFile);
-        }else {
-            FileManager.updateFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
-        }
-        try {
-            Thread.sleep(50);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        FileManager.downloadFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
     }
 }

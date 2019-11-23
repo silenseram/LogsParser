@@ -1,9 +1,6 @@
 package Model.Threads;
 
-import Model.ConfigManager;
-import Model.FileUpdater;
-import Model.LinkManager;
-import Model.MCLogs;
+import Model.*;
 import javafx.scene.control.TextArea;
 
 import java.io.File;
@@ -57,11 +54,6 @@ public class RealtimeOutputUpdater implements Runnable{
             }
 
             for (String i : messages){
-//                if (showTime) {
-//                    text += i + "\n";
-//                } else {
-//                    text += i + "\n";
-//                }
                 text += i + "\n";
             }
 
@@ -69,6 +61,7 @@ public class RealtimeOutputUpdater implements Runnable{
                 textArea.setText(text);
             textArea.setScrollTop(Double.MAX_VALUE);
             text = "";
+            Thread.yield();
 
         }
     }

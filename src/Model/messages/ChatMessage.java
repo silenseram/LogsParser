@@ -1,6 +1,6 @@
 package Model.messages;
 
-public class ChatMessage extends LogRecord {
+public class ChatMessage {
 
     public static String getMessage(String rawMsg, boolean showTime){
         String words[] = rawMsg.split(" ");

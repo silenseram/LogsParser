@@ -38,4 +38,8 @@ public class MCLogs {
     }
 
     public String getNowFilePath(){ return FileManager.getLogFilePath(TextUtils.getStringDate(localDate));  }
+
+    public LocalDate getLocalDate() {
+        return localDate;
+    }
 }

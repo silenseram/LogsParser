@@ -2,7 +2,7 @@ package Control;
 
 import Model.*;
 import Model.Threads.RealtimeOutputUpdater;
-import Model.Threads.ServerListUpdate;
+import Model.Threads.ServerListUpdater;
 import Model.Threads.ThreadController;
 import View.LogDisplayParams;
 import javafx.event.ActionEvent;
@@ -11,12 +11,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.time.LocalDate;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Controller {
 
+    public Controller(){
+        configManager = new ConfigManager("config");
+    }
+
     private LogDisplayParams displayParams;
+    public ConfigManager configManager;
+    private Thread updaterThread;
+    private boolean isServerListLoaded = false;
 
     private void setDisplayParams(){
         if (displayParams == null){
@@ -25,34 +30,19 @@ public class Controller {
         }
     }
 
-//    private void setFileUpdater(){
-//
-//        if (!ThreadController.isThreadExist(RealtimeFileUpdater.threadName)) {
-//            ConfigManager configManager = new ConfigManager("config");
-//
-//            LocalDate date = LocalDate.now();
-//            LinkManager linkManager = new LinkManager(configManager.getServerName(), date);
-//
-//
-//            RealtimeFileUpdater fileUpdater = new RealtimeFileUpdater(linkManager, Thread.currentThread().getName(), LocalDate.now());
-//            exec.submit(fileUpdater);
-//        }
-//    }
-
     private void setTextUpdater(){
-        if (ThreadController.isThreadExist(RealtimeOutputUpdater.threadName))
+        if (updaterThread != null){
             return;
-
+        }
         textArea.setScrollTop(Double.MAX_VALUE);
         LocalDate date = LocalDate.now();
         MCLogs logs = new MCLogs(date, displayParams);
         RealtimeOutputUpdater realtimeOutputUpdater = new RealtimeOutputUpdater(logs, textArea, Thread.currentThread().getName(),
-                date, new ConfigManager("config"));
+                date, configManager);
 
-        exec.submit(realtimeOutputUpdater);
+        updaterThread = new Thread(realtimeOutputUpdater);
+        updaterThread.start();
     }
-
-    private ExecutorService exec = Executors.newFixedThreadPool(1);
 
     @FXML
     private Button btn;
@@ -68,12 +58,11 @@ public class Controller {
     private CheckBox showTime;
     @FXML
     private ComboBox<String> comboBox;
-
+    String selection = "HiTechClassic";
 
     @FXML
     public void click(ActionEvent event) throws InterruptedException {
         setDisplayParams();
-        //setFileUpdater();
         setTextUpdater();
     }
 
@@ -99,19 +88,33 @@ public class Controller {
     }
 
     @FXML
-    private void onShowComboBox(Event a){
-        System.out.println("1");
-        if (ThreadController.isThreadExist(ServerListUpdate.threadName))
-            return;
-//        ServerListUpdate updater = new ServerListUpdate(comboBox, FileManager.getConfigFilePath("servers"));
-//        Thread thread = new Thread(updater);
-//        thread.start();
+    private void onChoiceBoxTouch(Event a){
+        System.out.println(1);
     }
 
     @FXML
-    private void comboBoxOnAction(Event e){
-        if (comboBox.getValue() == null)
-            comboBox.getSelectionModel().select(0);
-        //updateServer(); TODO
+    private void onShowComboBox(Event a){
+        if (!isServerListLoaded) {
+            ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
+            comboBox.getItems().setAll(updater.getData());
+            isServerListLoaded = true;
+        }
+        selection = comboBox.getValue();
+    }
+
+    @FXML
+    private void comboBoxOnAction(Event e) throws InterruptedException {
+        System.out.println(comboBox.getValue());
+
+        ConfigManager servers = new ConfigManager("servers");
+        configManager.setProperty("server", servers.getProperty(comboBox.getValue()));
+        configManager.updateProperties();
+
+        if (updaterThread != null) {
+            updaterThread.stop();
+            updaterThread = null;
+            setTextUpdater();
+        }
+
     }
 }

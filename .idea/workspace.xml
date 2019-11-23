@@ -2,19 +2,30 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="TryingJar" />
+      <artifact name="LogsParser" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/FileUpdater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/LogsParser.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LogsParser_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TryingJar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/FileUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Threads/RealtimeFileUpdater.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ThreadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/ThreadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/messages/LogRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/messages/PrivateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/PrivateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servers.properties" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,9 +57,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../forTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15711462" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -78,6 +89,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LogsParser" />
+      <shortenClasspath name="MANIFEST" />
       <option name="VM_PARAMETERS" value="--module-path C:\Users\Maorus\IdeaProjects\LogsParser\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -218,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574352956785</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="deleted file update thread">
+      <created>1574443864282</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574443864282</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -255,7 +274,8 @@
     <MESSAGE value="release build" />
     <MESSAGE value="some file managment" />
     <MESSAGE value="idk what i do, but its working" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk what i do, but its working" />
+    <MESSAGE value="deleted file update thread" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted file update thread" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

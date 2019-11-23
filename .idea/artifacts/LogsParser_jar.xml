@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="LogsParser:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/LogsParser_jar</output-path>
-    <root id="archive" name="LogsParser.jar">
-      <element id="module-output" name="LogsParser" />
-    </root>
-  </artifact>
-</component>

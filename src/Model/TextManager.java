@@ -1,13 +1,11 @@
 package Model;
 
 import Model.messages.ChatMessage;
-import Model.messages.LogRecord;
 import Model.messages.PrivateMessage;
 import View.LogDisplayParams;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
