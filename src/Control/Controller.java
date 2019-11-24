@@ -14,6 +14,16 @@ import java.time.LocalDate;
 
 public class Controller {
 
+    @FXML
+    public void initialize() throws InterruptedException {
+        localCheckBox.setSelected(true);
+        globalCheckBox.setSelected(true);
+        privateMessageCheckBox.setSelected(true);
+        showTime.setSelected(false);
+
+        click(null);
+    }
+
     public Controller(){
         configManager = new ConfigManager("config");
     }
@@ -52,8 +62,6 @@ public class Controller {
     private CheckBox globalCheckBox;
     @FXML
     private CheckBox privateMessageCheckBox;
-    @FXML
-    private DatePicker datePicker;
     @FXML
     private CheckBox showTime;
     @FXML

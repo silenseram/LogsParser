@@ -27,7 +27,7 @@ public class Main extends Application{
         group.getChildren().add(root);
 
         stage.setScene(new Scene(group));
-        //stage.setResizable(false);
+        stage.setResizable(false);
         stage.setTitle("writer's Realtime Logs");
         stage.show();
     }
