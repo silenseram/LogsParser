@@ -5,6 +5,8 @@ public class Initializer {
     public static void init() throws IOException {
         createDir("C:\\Users\\" + System.getProperty("user.name")  + "\\LogsParser");
         createDir("C:\\Users\\" + System.getProperty("user.name")  + "\\LogsParser\\txtlogs");
+        createDir("C:\\Users\\" + System.getProperty("user.name")  + "\\LogsParser\\txtlogs\\chat");
+        createDir("C:\\Users\\" + System.getProperty("user.name")  + "\\LogsParser\\txtlogs\\logs");
         createDir("C:\\Users\\" + System.getProperty("user.name")  + "\\LogsParser\\config");
 
         createConfigFiles();
