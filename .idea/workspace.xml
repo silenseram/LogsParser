@@ -7,22 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Control/LogsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Control/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/fxml/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/fxml/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/ChatUpdaterThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/ServerListUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ThreadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/ThreadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,13 +46,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../forTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bootstrapfx" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15711462" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -83,12 +74,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-13.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jre1.8.0_231" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LogsParser" />
       <shortenClasspath name="MANIFEST" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\Maorus\IdeaProjects\LogsParser\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -249,7 +239,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574620633891</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add logs listener">
+      <created>1574691041741</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574691041741</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add 2 directory to initializer">
+      <created>1574691173502</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574691173502</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -289,7 +293,9 @@
     <MESSAGE value="deleted file update thread" />
     <MESSAGE value="fixed some links, null choice in combobox, release is coming" />
     <MESSAGE value="add utf-8" />
-    <option name="LAST_COMMIT_MESSAGE" value="add utf-8" />
+    <MESSAGE value="add logs listener" />
+    <MESSAGE value="add 2 directory to initializer" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 2 directory to initializer" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

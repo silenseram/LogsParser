@@ -4,18 +4,18 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="720" prefWidth="1024" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.MainController">
+<AnchorPane prefHeight="720" prefWidth="900" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.MainController">
     <children>
-      <TabPane prefHeight="720" prefWidth="1000" tabClosingPolicy="UNAVAILABLE">
+      <TabPane stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="Личные сообщения и чат">
             <content>
-              <fx:include source="Chat.fxml"></fx:include>
+              <fx:include source="Chat.fxml" />
             </content>
           </Tab>
           <Tab text="Логи">
             <content>
-              <fx:include source="Logs.fxml"></fx:include>
+              <fx:include source="Logs.fxml" />
             </content>
           </Tab>
         </tabs>

@@ -8,9 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="991.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.LogsController">
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.231" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.LogsController">
    <children>
-      <BorderPane layoutY="1.0" prefHeight="661.0" prefWidth="990.0">
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <center>
+              <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+          </center>
          <bottom>
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
@@ -20,9 +23,6 @@
               </items>
             </ToolBar>
          </bottom>
-         <center>
-            <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
-         </center>
       </BorderPane>
    </children>
 </AnchorPane>

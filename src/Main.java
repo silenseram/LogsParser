@@ -18,16 +18,9 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws IOException {
         Initializer.init();
-        Group group = new Group();
         Parent content = FXMLLoader.load(getClass().getResource("View/fxml/MainWindow.fxml"));
 
-        BorderPane root = new BorderPane();
-        root.setCenter(content);
-
-        group.getChildren().add(root);
-
-        stage.setScene(new Scene(group));
-        stage.setResizable(false);
+        stage.setScene(new Scene(content));
         stage.setTitle("writer's Realtime Logs");
         stage.show();
     }

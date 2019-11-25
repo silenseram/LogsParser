@@ -1,0 +1,29 @@
+.tab-pane>*.tab-header-area>*.headers-region>*.tab { /* FX theme stylesheet */
+-fx-background-radius: 3px 3px 0px 0px / 3px 3px 0px 0px, 2px 2px 0px 0px / 2px 2px 0px 0px, 1px 1px 0px 0px / 1px 1px 0px 0px;
+-fx-padding: 0.083333em 0.5em 0.0769em 0.5em;
+}
+
+.root { /* FX theme stylesheet */
+-fx-outer-border: derive(-fx-color, -23%);
+-fx-color: -fx-base;
+-fx-base: #ececec;
+-fx-inner-border: 0%, 0%, 0%, 100%, NO_CYCLE, 0%, ladder(-fx-color, 0%, derive(-fx-color, 30%), 40%, derive(-fx-color, 20%), 60%, derive(-fx-color, 25%), 80%, derive(-fx-color, 55%), 90%, derive(-fx-color, 55%), 100%, derive(-fx-color, 75%)), 100%, ladder(-fx-color, 0%, derive(-fx-color, 20%), 20%, derive(-fx-color, 10%), 40%, derive(-fx-color, 5%), 60%, derive(-fx-color, -2%), 100%, derive(-fx-color, -5%));
+-fx-background: derive(-fx-base, 26.4%);
+}
+
+.tab-pane>*.tab-header-area>*.headers-region>*.tab:selected { /* FX theme stylesheet */
+-fx-background-color: -fx-outer-border, -fx-inner-border, -fx-background;
+-fx-background-insets: 0px 1px 1px 0px, 1px 2px 0px 1px, 2px 3px 0px 2px;
+}
+
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #1d1d1d;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 55pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
