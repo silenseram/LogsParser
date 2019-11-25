@@ -1,12 +1,11 @@
 package Model;
 
-import Model.messages.PrivateMessage;
+import Model.TextUpdaters.TextManager;
 import View.LogDisplayParams;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MCLogs {
@@ -17,9 +16,10 @@ public class MCLogs {
     TextManager textManager;
     private LogDisplayParams params;
 
-    public MCLogs() {
+    public MCLogs(LocalDate localDate) {
+        this.localDate = localDate;
         configManager = new ConfigManager("config");
-        this.server = configManager.getServerName();
+        this.server = configManager.getLogsServerName();
     }
 
     public MCLogs(LocalDate date, LogDisplayParams params) {
@@ -31,13 +31,20 @@ public class MCLogs {
 
     public List<String> getRequestedLines() throws FileNotFoundException {
 
-        File file = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
+        File file = new File(FileManager.getLogChatFilePath(TextUtils.getStringDate(localDate)));
         TextManager textManager = new TextManager(file.getAbsolutePath());
 
         return textManager.getSelectedLogs(params);
     }
 
-    public String getNowFilePath(){ return FileManager.getLogFilePath(TextUtils.getStringDate(localDate));  }
+    public List<String> getAllLogs(){
+        File file = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
+        TextManager textManager = new TextManager(file.getAbsolutePath());
+
+        return textManager.getAllLogs();
+    }
+
+    public String getNowFilePath(){ return FileManager.getLogChatFilePath(TextUtils.getStringDate(localDate));  }
 
     public LocalDate getLocalDate() {
         return localDate;

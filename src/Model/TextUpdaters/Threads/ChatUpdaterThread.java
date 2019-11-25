@@ -1,4 +1,4 @@
-package Model.Threads;
+package Model.TextUpdaters.Threads;
 
 import Model.*;
 import javafx.scene.control.TextArea;
@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.List;
 
-public class RealtimeOutputUpdater implements Runnable{
+public class ChatUpdaterThread implements Runnable{
 
     private TextArea textArea;
     private MCLogs logs;
@@ -18,7 +18,7 @@ public class RealtimeOutputUpdater implements Runnable{
     private File file;
     private FileUpdater fileUpdater;
 
-    public RealtimeOutputUpdater(MCLogs logs, TextArea textArea, String mainThreadName, LocalDate localDate, ConfigManager configManager) {
+    public ChatUpdaterThread(MCLogs logs, TextArea textArea, String mainThreadName, LocalDate localDate, ConfigManager configManager) {
         this.logs = logs;
         this.textArea = textArea;
         this.mainThreadName = mainThreadName;
@@ -28,7 +28,7 @@ public class RealtimeOutputUpdater implements Runnable{
 
     @Override
     public void run() {
-        Thread.currentThread().setName(RealtimeOutputUpdater.threadName);
+        Thread.currentThread().setName(ChatUpdaterThread.threadName);
         String text = "";
         while (true){
 
@@ -41,9 +41,9 @@ public class RealtimeOutputUpdater implements Runnable{
             if (!isMainThreadExist)
                 return;
 
-            fileUpdater.update();
+            fileUpdater.updateChatFile();
 
-            List<String> messages;
+            List<String> messages = null;
             try {
                 messages = logs.getRequestedLines();
             } catch (FileNotFoundException e) {

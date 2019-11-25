@@ -1,4 +1,4 @@
-package Model.Threads;
+package Model.TextUpdaters.Threads;
 
 import javafx.scene.control.ComboBox;
 

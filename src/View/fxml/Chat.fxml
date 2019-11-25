@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ChatController">
+    <children>
+        <BorderPane prefHeight="680" prefWidth="1080">
+            <center>
+                <TextArea fx:id="textArea" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" promptText="..." scrollTop="1.7976931348623157E308" text="..." wrapText="true" BorderPane.alignment="CENTER" />
+            </center>
+            <bottom>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Button fx:id="btn" mnemonicParsing="false" onAction="#click" text="Update" />
+                        <CheckBox fx:id="showTime" mnemonicParsing="false" onAction="#onShowTimeAction" text="Показывать время" />
+                        <CheckBox fx:id="localCheckBox" mnemonicParsing="false" onAction="#onLocalCheckBoxAction" text="L" />
+                        <CheckBox fx:id="globalCheckBox" mnemonicParsing="false" onAction="#onGlobalCheckBoxAction" text="G" />
+                        <CheckBox fx:id="privateMessageCheckBox" mnemonicParsing="false" onAction="#onPrivateMessageCheckBoxAction" text="Личные сообщения" />
+                        <ComboBox fx:id="comboBox" onAction="#comboBoxOnAction" onShowing="#onShowComboBox" prefWidth="150.0" promptText="Сервер" />
+                    </items>
+                </ToolBar>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>

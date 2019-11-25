@@ -1,5 +1,6 @@
 package Model;
 
+import java.awt.*;
 import java.io.File;
 import java.time.LocalDate;
 
@@ -13,7 +14,10 @@ public class FileUpdater {
         this.localDate = localDate;
     }
 
-    public void update(){
-        FileManager.downloadFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
+    public void updateChatFile(){
+        FileManager.downloadChatFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
+    }
+    public void updateLogFile(){
+        FileManager.downloadLogFile(linkManager.getUrl(), TextUtils.getStringDate(localDate));
     }
 }

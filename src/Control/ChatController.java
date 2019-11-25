@@ -1,9 +1,8 @@
 package Control;
 
 import Model.*;
-import Model.Threads.RealtimeOutputUpdater;
-import Model.Threads.ServerListUpdater;
-import Model.Threads.ThreadController;
+import Model.TextUpdaters.Threads.ChatUpdaterThread;
+import Model.TextUpdaters.Threads.ServerListUpdater;
 import View.LogDisplayParams;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -12,7 +11,7 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 
-public class Controller {
+public class ChatController {
 
     @FXML
     public void initialize() throws InterruptedException {
@@ -21,10 +20,10 @@ public class Controller {
         privateMessageCheckBox.setSelected(true);
         showTime.setSelected(false);
 
-        click(null);
+        click();
     }
 
-    public Controller(){
+    public ChatController(){
         configManager = new ConfigManager("config");
     }
 
@@ -47,15 +46,13 @@ public class Controller {
         textArea.setScrollTop(Double.MAX_VALUE);
         LocalDate date = LocalDate.now();
         MCLogs logs = new MCLogs(date, displayParams);
-        RealtimeOutputUpdater realtimeOutputUpdater = new RealtimeOutputUpdater(logs, textArea, Thread.currentThread().getName(),
+        ChatUpdaterThread chatUpdaterThread = new ChatUpdaterThread(logs, textArea, Thread.currentThread().getName(),
                 date, configManager);
 
-        updaterThread = new Thread(realtimeOutputUpdater);
+        updaterThread = new Thread(chatUpdaterThread);
         updaterThread.start();
     }
 
-    @FXML
-    private Button btn;
     @FXML
     private CheckBox localCheckBox;
     @FXML
@@ -69,7 +66,7 @@ public class Controller {
     String selection = "HiTechClassic";
 
     @FXML
-    public void click(ActionEvent event) throws InterruptedException {
+    public void click() throws InterruptedException {
         setDisplayParams();
         setTextUpdater();
     }
@@ -79,20 +76,20 @@ public class Controller {
 
     @FXML
     private void onShowTimeAction(ActionEvent a) throws InterruptedException {
-        click(null);
+        click();
     }
 
     @FXML
     private void onPrivateMessageCheckBoxAction(ActionEvent a) throws InterruptedException{
-        click(null);
+        click();
     }
     @FXML
     private void onGlobalCheckBoxAction(ActionEvent a) throws InterruptedException{
-        click(null);
+        click();
     }
     @FXML
     private void onLocalCheckBoxAction(ActionEvent a) throws InterruptedException{
-        click(null);
+        click();
     }
 
     @FXML

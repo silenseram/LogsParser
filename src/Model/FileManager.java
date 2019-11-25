@@ -16,7 +16,10 @@ public class FileManager{
     private String fileName;
 
     public static String getLogFilePath(String fileName){
-        return "C://Users//" + System.getProperty("user.name") + "//LogsParser//txtlogs//" + fileName + ".txt";
+        return "C://Users//" + System.getProperty("user.name") + "//LogsParser//txtlogs//logs//" + fileName + ".txt";
+    }
+    public static String getLogChatFilePath(String fileName){
+        return "C://Users//" + System.getProperty("user.name") + "//LogsParser//txtlogs//chat//" + fileName + ".txt";
     }
 
     public static String getConfigFilePath(String fileName){
@@ -36,8 +39,8 @@ public class FileManager{
 
     }
 
-    public static File downloadFile(String url, String filename){
-       File f = new File(getLogFilePath(filename));
+    public static File downloadChatFile(String url, String filename){
+       File f = new File(getLogChatFilePath(filename));
        try {
            URL website = new URL(url);
            //System.out.println(url);
@@ -52,5 +55,23 @@ public class FileManager{
        }
 
        return f;
+    }
+
+    public static File downloadLogFile(String url, String filename){
+        File f = new File(getLogFilePath(filename));
+        try {
+            URL website = new URL(url);
+            //System.out.println(url);
+            ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+            FileOutputStream fos = new FileOutputStream(f);
+            fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+
+            fos.close();
+            rbc.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return f;
     }
 }

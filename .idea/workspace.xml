@@ -7,11 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Control/LogsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Control/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/FileUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Threads/RealtimeOutputUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/ChatUpdaterThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ServerListUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/ServerListUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Threads/ThreadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/ThreadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574506954039</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add utf-8">
+      <created>1574620633891</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1574620633891</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -269,7 +288,8 @@
     <MESSAGE value="idk what i do, but its working" />
     <MESSAGE value="deleted file update thread" />
     <MESSAGE value="fixed some links, null choice in combobox, release is coming" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some links, null choice in combobox, release is coming" />
+    <MESSAGE value="add utf-8" />
+    <option name="LAST_COMMIT_MESSAGE" value="add utf-8" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

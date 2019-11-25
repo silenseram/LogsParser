@@ -1,4 +1,4 @@
-package Model;
+package Model.TextUpdaters;
 
 import Model.messages.ChatMessage;
 import Model.messages.PrivateMessage;
@@ -45,7 +45,7 @@ public class TextManager {
     public List<String> getSelectedLogs(LogDisplayParams params) throws FileNotFoundException{
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(file), "UTF-8"));) {
+                new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
             for (String current = reader.readLine(); current != null; current = reader
                     .readLine()) {
                 String toAdd;
@@ -56,6 +56,20 @@ public class TextManager {
                 } else if (params.isShowGlobalMessages() && isGlobalChatMessage(current)){
                     result.add(ChatMessage.getMessage(current, params.isShowTime()));
                 }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public List<String> getAllLogs(){
+        List<String> result = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
+            for (String current = reader.readLine(); current != null; current = reader
+                    .readLine()) {
+                result.add(current);
             }
         } catch (Exception e) {
             e.printStackTrace();

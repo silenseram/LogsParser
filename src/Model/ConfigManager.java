@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class ConfigManager {
 
-    Properties properties;
+    private Properties properties;
 
     private String server;
     private String filePath;
@@ -37,6 +37,8 @@ public class ConfigManager {
     }
 
     public String getServerName(){ return server; }
+
+    public String getLogsServerName(){ return properties.getProperty("logs_server"); }
 
     public void setProperty(String key, String value){
         try {
