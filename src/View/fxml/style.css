@@ -37,9 +37,11 @@
 
     -fx-background-color: #1d1d1d;
 
+
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 11pt;
-    -fx-text-fill: #b5b5b5;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #d8d8d8;
     -fx-color: #303030;
 }
 
@@ -135,9 +137,10 @@
 
     -fx-background-color: #1d1d1d;
 
-    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-text-fill: #d8d8d8;
+    -fx-color: #303030;
 }
 
 /*#privateMessageCheckBox{

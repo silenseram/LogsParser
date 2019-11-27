@@ -7,19 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Control/LogsManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsAccessorThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/fxml/LogsManager.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/LogsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/LogsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/FileUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/LogsManager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/LogsManager.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/fxml/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -273,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574852482105</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="add offline logs with search (regex supports)">
+      <created>1574877551847</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1574877551847</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -317,7 +316,8 @@
     <MESSAGE value="add 2 directory to initializer" />
     <MESSAGE value="addad dark theme" />
     <MESSAGE value="fixed logs load, some visual changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed logs load, some visual changes" />
+    <MESSAGE value="add offline logs with search (regex supports)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add offline logs with search (regex supports)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
