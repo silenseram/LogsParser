@@ -19,7 +19,6 @@ public class LogsUpdaterThread implements Runnable {
     private MCLogs mcLogs;
     private FileUpdater fileUpdater;
     private TextArea textArea;
-    private List<String> logsIn;
     private boolean isStartWrited = false;
 
     public LogsUpdaterThread(TextArea textArea, LocalDate localDate, ConfigManager configManager, String mainThreadName, MCLogs mcLogs) {
@@ -28,23 +27,17 @@ public class LogsUpdaterThread implements Runnable {
         this.configManager = configManager;
         this.mainThreadName = mainThreadName;
         this.mcLogs = mcLogs;
-        this.fileUpdater = new FileUpdater(new LinkManager(configManager.getServerName(), localDate), localDate);
-        logsIn = new ArrayList<>();
+        this.fileUpdater = new FileUpdater(new LinkManager(configManager.getLogsServerName(), localDate), localDate);
     }
 
     @Override
     public void run() {
+        String logRecord = "";
+
         fileUpdater.updateLogFile();
-        writeLogs();
         String text = "";
-        for (int i = 0; i < logsIn.size(); i++) {
-            text += logsIn.get(i) + "\n";
-        }
-        textArea.setText(text);
-        textArea.setScrollTop(Double.MAX_VALUE);
 
         Thread.currentThread().setName(threadName);
-        text = "";
 
         while (true){
 
@@ -64,35 +57,22 @@ public class LogsUpdaterThread implements Runnable {
             try {
                 newMessages = mcLogs.getAllLogs();
 
-                if (newMessages != null && newMessages.size() != logsIn.size()){
-                    for(int i = logsIn.size(); i < newMessages.size(); i++){
-                        textArea.appendText(newMessages.get(i) + "\n");
-                        logsIn.add(newMessages.get(i));
-                    }
-                    textArea.setScrollTop(Double.MAX_VALUE);
+                for (String i : newMessages){
+                    text += i + "\n";
+                }
+                if (!text.equals(textArea.getText())) {
+                    textArea.setText(text);
                 }
 
+                textArea.setScrollTop(Double.MAX_VALUE);
             } catch (Exception e){
                 e.printStackTrace();
             }
 
-//            for (String i : messages){
-//                text += i + "\n";
-//            }
-
-//            if (textArea.getText() != text && !text.equals(""))
-//                textArea.setText(text);
-//            textArea.setScrollTop(Double.MAX_VALUE);
             text = "";
             Thread.yield();
 
         }
 
-    }
-
-    private void writeLogs(){
-        for (String i : mcLogs.getAllLogs()){
-            logsIn.add(i);
-        }
     }
 }

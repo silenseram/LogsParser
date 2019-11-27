@@ -15,6 +15,7 @@
     -fx-opacity: 0.6;
 }
 
+
 /*******************************************************************************
  *                                                                             *
  * Push Button                                                                 *
@@ -29,7 +30,7 @@
 
 .button {
     -fx-padding: 5 22 5 22;
-    -fx-border-color: #e2e2e2;
+    -fx-border-color: #545454;
     -fx-border-width: 2;
 
     -fx-background-radius: 0;
@@ -46,7 +47,7 @@
 }
 
 .text-area{
-    /*-fx-text-fill: #9d9d9d;*/
+    -fx-text-fill: #9d9d9d;
     -fx-control-inner-background: #1e1e1e;
 }
 
@@ -62,37 +63,27 @@
     -fx-color: #141414;
 }
 
-.button:pressed, .button:default:hover:pressed
+/*.button:pressed, .button:default:hover:pressed
 {
     -fx-background-color: gray;
     -fx-text-fill: #1d1d1d;
 }
-
-.button:focused
+*/
+/*.button:focused
 {
     -fx-border-color: white, white;
     -fx-border-width: 1, 1;
     -fx-border-style: solid, segments(1, 1);
     -fx-border-radius: 0, 0;
     -fx-border-insets: 1 1 1 1, 0;
-}
+}*/
 
-.button:disabled, .button:default:disabled
+/*.button:disabled, .button:default:disabled
 {
     -fx-opacity: 0.4;
     -fx-background-color: #1d1d1d;
     -fx-text-fill: white;
-}
-
-.button:default
-{
-    -fx-background-color: #008287;
-    -fx-text-fill: #ffffff;
-}
-
-.button:default:hover{
-    -fx-background-color: #219297;
-}
+}*/
 
 /*******************************************************************************
  *                                                                             *
@@ -102,7 +93,7 @@
 
 .toggle-button {
     -fx-padding: 5 22 5 22;
-    -fx-border-color: #e2e2e2;
+    -fx-border-color: #636363;
     -fx-border-width: 2;
 
     -fx-background-radius: 0;
@@ -161,10 +152,10 @@
  ******************************************************************************/
 
 .check-box .box {
-    -fx-background-color: #d1d1d1;
+    -fx-background-color: #636363;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
-    -fx-border-color: #d1d1d1;
+    -fx-border-color: #636363;
     -fx-border-width: 2px;
     -fx-borders-style: solid;
     -fx-padding: 1;
@@ -179,17 +170,17 @@
 }
 
 .check-box:focused .box{
-    -fx-background-color: #d1d1d1;
+    -fx-background-color: #636363;
     -fx-background-insets: 0;
     -fx-background-radius: 0;
-    -fx-border-color: white, #d1d1d1;
+    -fx-border-color: white, #636363;
     -fx-border-width: 1, 2;
     -fx-border-style: segments(1, 1), solid;
     -fx-border-insets: -3, 0;
 }
 
 .check-box:selected .mark {
-    -fx-background-color: #202020;
+    -fx-background-color: black;
 }
 
 .check-box:indeterminate .mark {
@@ -206,13 +197,13 @@
 
 .check-box:disabled .box
 {
-    -fx-border-color: white;
-    -fx-background-color: white;
+    -fx-border-color: #636363;
+    -fx-background-color: #636363;
 }
 
 .check-box:armed .box
 {
-    -fx-background-color: transparent, white;
+    -fx-background-color: transparent, gray;
     -fx-background-insets: -1, 2;
     -fx-background-radius: 0, 0;
 }
@@ -505,7 +496,7 @@
  ******************************************************************************/
 
 .combo-box-base  {
-    -fx-background-color: transparent, #e2e2e2, transparent, #4a4a4a;
+    -fx-background-color: transparent, #636363, transparent, #4a4a4a;
     -fx-background-radius: 0, 0, 0, 0;
     -fx-padding: 0.166667em; /* 2 */
 }

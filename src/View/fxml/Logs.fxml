@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.231" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.LogsController">
+<AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.LogsController">
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <center>
-              <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+              <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="14.0" />
+               </font></TextArea>
           </center>
          <bottom>
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
-                  <ToggleButton fx:id="toggleButton" mnemonicParsing="false" onAction="#onToggleButtonAction" text="ToggleButton" />
+                  <ToggleButton fx:id="toggleButton" mnemonicParsing="false" onAction="#onToggleButtonAction" text="Онлайн режим" />
                   <ComboBox fx:id="comboBox" onAction="#onComboBoxAction" onShowing="#onComboBoxShow" prefWidth="150.0" promptText="Сервер" />
-                  <DatePicker fx:id="datePicker" />
               </items>
             </ToolBar>
          </bottom>

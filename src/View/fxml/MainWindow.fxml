@@ -13,7 +13,7 @@
               <fx:include source="Chat.fxml" />
             </content>
           </Tab>
-          <Tab text="Логи">
+          <Tab text="Онлайн логи">
             <content>
               <fx:include source="Logs.fxml" />
             </content>

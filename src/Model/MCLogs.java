@@ -1,6 +1,7 @@
 package Model;
 
 import Model.TextUpdaters.TextManager;
+import Model.messages.TimezoneManager;
 import View.LogDisplayParams;
 
 import java.io.File;
@@ -24,7 +25,9 @@ public class MCLogs {
 
     public MCLogs(LocalDate date, LogDisplayParams params) {
         this.params = params;
-        this.localDate = date;
+        TimezoneManager timezoneManager = new TimezoneManager(new ConfigManager("config").getServerName());
+        System.out.println(TextUtils.getStringDate(date));
+        this.localDate = timezoneManager.getRealLocalDate(date);
         configManager = new ConfigManager("config");
         this.server = configManager.getServerName();
     }

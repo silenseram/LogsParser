@@ -1,7 +1,9 @@
 package Model.TextUpdaters;
 
+import Model.ConfigManager;
 import Model.messages.ChatMessage;
 import Model.messages.PrivateMessage;
+import Model.messages.TimezoneManager;
 import View.LogDisplayParams;
 
 import java.io.*;
@@ -22,12 +24,14 @@ public class TextManager {
     private Pattern globalChatPattern;
     private Matcher matcher;
     private File file;
+    private TimezoneManager timezoneManager;
 
     public TextManager(String filePath){
         file = new File(filePath);
         privateMessagePattern = Pattern.compile(privateMessaeStringPattern);
         localChatPattern = Pattern.compile(localChatStringPattern);
         globalChatPattern = Pattern.compile(globalChatStringPattern);
+        this.timezoneManager = new TimezoneManager(new ConfigManager("config").getServerName());
     }
 
     public boolean isPrivateMessage(String command){
@@ -50,16 +54,26 @@ public class TextManager {
                     .readLine()) {
                 String toAdd;
                 if (params.isShowPrivateMessages() && isPrivateMessage(current)) {
-                    result.add(PrivateMessage.getMessage(current, params.isShowTime()));
+                    result.add(PrivateMessage.getMessage(current, params.isShowTime(), timezoneManager));
                 } else if (params.isShowLocalMessages() && islocalChatMessage(current)){
-                    result.add(ChatMessage.getMessage(current, params.isShowTime()));
+                    result.add(ChatMessage.getMessage(current, params.isShowTime(), timezoneManager));
                 } else if (params.isShowGlobalMessages() && isGlobalChatMessage(current)){
-                    result.add(ChatMessage.getMessage(current, params.isShowTime()));
+                    result.add(ChatMessage.getMessage(current, params.isShowTime(), timezoneManager));
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        int size = result.size();
+        if (size > 100){
+            List<String> res = new ArrayList<>();
+            for (int i = size - 100; i < size; i++){
+                res.add(result.get(i));
+            }
+            return res;
+        }
+
         return result;
     }
 
@@ -74,6 +88,16 @@ public class TextManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        int size = result.size();
+        if (size > 100){
+            List<String> res = new ArrayList<>();
+            for (int i = size - 100; i < size; i++){
+                res.add(result.get(i));
+            }
+            return res;
+        }
+
         return result;
     }
 

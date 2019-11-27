@@ -1,12 +1,15 @@
 package Model.messages;
 
+import Model.ConfigManager;
+
 public class PrivateMessage {
-    public static String getMessage(String rawMessage, boolean showTime){
+    public static String getMessage(String rawMessage, boolean showTime, TimezoneManager timezoneManager){
         String words[] = rawMessage.split(" ");
 
         String time = "";
         if (showTime){
             time = words[0];
+            time = timezoneManager.getChangedTime(time);
         }
 
         String type = words[5];
