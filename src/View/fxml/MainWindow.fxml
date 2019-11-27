@@ -18,6 +18,11 @@
               <fx:include source="Logs.fxml" />
             </content>
           </Tab>
+          <Tab text="Логи">
+            <content>
+              <fx:include source="LogsManager.fxml"/>
+            </content>
+          </Tab>
         </tabs>
       </TabPane>
     </children>

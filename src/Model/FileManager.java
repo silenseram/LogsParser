@@ -26,6 +26,10 @@ public class FileManager{
         return "C://Users//" + System.getProperty("user.name") + "//LogsParser//config//" + fileName + ".properties";
     }
 
+    public static String getLogsAccessorPath(String fileName){
+        return "C://Users//" + System.getProperty("user.name") + "//LogsParser//txtlogs//full_logs//" + fileName + ".txt";
+    }
+
     private static boolean swapName(File tmp1, File tmp2) {
         String path1 = tmp1.getAbsolutePath().substring(0, tmp1.getAbsolutePath().lastIndexOf(File.separator)+1);
         String fileName1 = tmp2.getName();
@@ -58,6 +62,24 @@ public class FileManager{
     }
 
     public static File downloadLogFile(String url, String filename){
+        File f = new File(getLogsAccessorPath(filename));
+        try {
+            URL website = new URL(url);
+            //System.out.println(url);
+            ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+            FileOutputStream fos = new FileOutputStream(f);
+            fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
+
+            fos.close();
+            rbc.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return f;
+    }
+
+    public static File downloadLogsAccessFile(String url, String filename){
         File f = new File(getLogFilePath(filename));
         try {
             URL website = new URL(url);

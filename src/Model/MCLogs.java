@@ -40,6 +40,13 @@ public class MCLogs {
         return textManager.getSelectedLogs(params);
     }
 
+    public List<String> getCuttedLogs(){
+        File file = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
+        TextManager textManager = new TextManager(file.getAbsolutePath());
+
+        return textManager.getCuttedLogs();
+    }
+
     public List<String> getAllLogs(){
         File file = new File(FileManager.getLogFilePath(TextUtils.getStringDate(localDate)));
         TextManager textManager = new TextManager(file.getAbsolutePath());

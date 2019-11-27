@@ -55,7 +55,7 @@ public class LogsUpdaterThread implements Runnable {
 
             List<String> newMessages = null;
             try {
-                newMessages = mcLogs.getAllLogs();
+                newMessages = mcLogs.getCuttedLogs();
 
                 for (String i : newMessages){
                     text += i + "\n";

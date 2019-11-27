@@ -89,6 +89,21 @@ public class TextManager {
             e.printStackTrace();
         }
 
+        return result;
+    }
+
+    public List<String> getCuttedLogs(){
+        List<String> result = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
+            for (String current = reader.readLine(); current != null; current = reader
+                    .readLine()) {
+                result.add(current);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         int size = result.size();
         if (size > 100){
             List<String> res = new ArrayList<>();
@@ -99,6 +114,11 @@ public class TextManager {
         }
 
         return result;
+    }
+
+    public static boolean findByPattern(String string, String key){
+        Pattern pattern = Pattern.compile(".*" + key + ".*");
+        return pattern.matcher(string).lookingAt();
     }
 
 }

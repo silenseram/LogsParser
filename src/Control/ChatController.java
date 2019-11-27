@@ -20,6 +20,10 @@ public class ChatController {
         privateMessageCheckBox.setSelected(true);
         showTime.setSelected(false);
 
+        ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
+        comboBox.getItems().setAll(updater.getData());
+        isServerListLoaded = true;
+
         click();
     }
 
@@ -93,17 +97,7 @@ public class ChatController {
     }
 
     @FXML
-    private void onChoiceBoxTouch(Event a){
-        System.out.println(1);
-    }
-
-    @FXML
     private void onShowComboBox(Event a){
-        if (!isServerListLoaded) {
-            ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
-            comboBox.getItems().setAll(updater.getData());
-            isServerListLoaded = true;
-        }
         selection = comboBox.getValue();
     }
 

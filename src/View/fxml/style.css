@@ -39,24 +39,59 @@
 
     -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 11pt;
-    -fx-text-fill: #d8d8d8;
+    -fx-text-fill: #b5b5b5;
+    -fx-color: #303030;
 }
 
 .button:hover{
     -fx-background-color: #3a3a3a;
 }
 
+.text-area:focused{
+    -fx-border-color: #575757;
+}
+
 .text-area{
-    -fx-text-fill: #9d9d9d;
-    -fx-control-inner-background: #1e1e1e;
+    -fx-color: #303030;
+    -fx-text-fill: #b5b5b5;
+    -fx-control-inner-background: #303030;
 }
 
 .tab{
     -fx-background-color: gray;
 }
 
-.anchor-pane{
-    -fx-color: #141414;
+.tab:selected{
+    -fx-background-color: #9e9e9e;
+}
+
+.pane{
+    -fx-background-insets: red;
+    -fx-background-color: red;
+    -fx-border-color: red;
+}
+    
+.border-pane{
+    -fx-color: red;
+    -fx-background-color: red;
+    -fx-border-color: red;
+}
+
+.date-picker{
+    -fx-boreder-color: #636363;
+    -fx-color: #636363;
+    -fx-background-color: red;
+}
+
+.date-picker > .text-field{
+    -fx-background-color: #303030;
+    -fx-text-fill: #b5b5b5;
+}
+
+.text-field{
+    -fx-border-color: #636363;
+    -fx-text-fill: #b5b5b5;
+    -fx-background-color: #303030;
 }
 
 .border-pane{

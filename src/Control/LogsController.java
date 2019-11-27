@@ -9,6 +9,7 @@ import Model.TextUpdaters.Threads.ThreadController;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Font;
 
 import java.time.LocalDate;
@@ -17,6 +18,9 @@ public class LogsController {
 
     @FXML
     public void initialize() throws InterruptedException {
+        ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
+        comboBox.getItems().setAll(updater.getData());
+        isServerListLoaded = true;
     }
 
     private boolean isServerListLoaded = false;
@@ -32,11 +36,6 @@ public class LogsController {
     private ToggleButton toggleButton;
 
     public void onComboBoxShow(javafx.event.Event event) throws InterruptedException {
-        if (!isServerListLoaded){
-            ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
-            comboBox.getItems().setAll(updater.getData());
-            isServerListLoaded = true;
-        }
     }
 
     @FXML

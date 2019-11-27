@@ -40,6 +40,8 @@ public class ConfigManager {
 
     public String getLogsServerName(){ return properties.getProperty("logs_server"); }
 
+    public String getLogsAccessorServerName(){ return properties.getProperty("logs_access"); }
+
     public void setProperty(String key, String value){
         try {
             FileOutputStream out = new FileOutputStream(configFilePath);
