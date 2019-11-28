@@ -14,7 +14,7 @@
           <center>
               <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Arial" size="14.0" />
+                  <Font name="Arial" size="18.0" />
                </font></TextArea>
           </center>
          <bottom>

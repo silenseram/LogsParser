@@ -19,7 +19,6 @@ public class LogsUpdaterThread implements Runnable {
     private MCLogs mcLogs;
     private FileUpdater fileUpdater;
     private TextArea textArea;
-    private boolean isStartWrited = false;
 
     public LogsUpdaterThread(TextArea textArea, LocalDate localDate, ConfigManager configManager, String mainThreadName, MCLogs mcLogs) {
         this.textArea = textArea;

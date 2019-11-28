@@ -62,7 +62,7 @@ public class FileManager{
     }
 
     public static File downloadLogFile(String url, String filename){
-        File f = new File(getLogsAccessorPath(filename));
+        File f = new File(getLogFilePath(filename));
         try {
             URL website = new URL(url);
             //System.out.println(url);

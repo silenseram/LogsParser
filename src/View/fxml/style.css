@@ -252,6 +252,11 @@
  *                                                                             *
  ******************************************************************************/
 
+.root{
+    -fx-base: black;
+    -fx-background: black;
+}
+
 .radio-button {
     -fx-text-fill: white;
 }

@@ -8,10 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Chat.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fxml/LogsManager.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/LogsManager.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/fxml/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/fxml/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -272,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574877551847</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="visual changes">
+      <created>1574880918424</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1574880918425</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -317,7 +323,8 @@
     <MESSAGE value="addad dark theme" />
     <MESSAGE value="fixed logs load, some visual changes" />
     <MESSAGE value="add offline logs with search (regex supports)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add offline logs with search (regex supports)" />
+    <MESSAGE value="visual changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="visual changes" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
