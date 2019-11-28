@@ -8,13 +8,16 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 
 public class ChatController {
 
     @FXML
-    public void initialize() throws InterruptedException {
+    public void initialize() throws InterruptedException, IOException {
         localCheckBox.setSelected(true);
         globalCheckBox.setSelected(true);
         privateMessageCheckBox.setSelected(true);
@@ -23,6 +26,7 @@ public class ChatController {
         ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
         comboBox.getItems().setAll(updater.getData());
         isServerListLoaded = true;
+        textArea.setFont(new Font(new ConfigManager("config").getProperty("font"), 14));
 
         click();
     }

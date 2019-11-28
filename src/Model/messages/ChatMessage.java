@@ -15,7 +15,7 @@ public class ChatMessage {
             text += words[i] + " ";
         }
 
-        return time + text;
+        return time + " " + text;
     }
 
 }

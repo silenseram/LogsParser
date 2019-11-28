@@ -8,7 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsAccessorThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsAccessorThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/messages/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +46,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../forTest" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15711462" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -282,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574963369733</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="initializer fix">
+      <created>1574965568708</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1574965568708</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -329,7 +340,8 @@
     <MESSAGE value="add offline logs with search (regex supports)" />
     <MESSAGE value="visual changes" />
     <MESSAGE value="release version 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="release version 1.0" />
+    <MESSAGE value="initializer fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="initializer fix" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

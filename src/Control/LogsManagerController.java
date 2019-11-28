@@ -8,6 +8,7 @@ import Model.TextUpdaters.Threads.ServerListUpdater;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Font;
 
 import java.io.File;
 import java.time.LocalDate;
@@ -23,6 +24,8 @@ public class LogsManagerController {
             ServerListUpdater serverListUpdater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
             comboBox.getItems().setAll(serverListUpdater.getData());
         }
+        textArea.setFont(new Font(new ConfigManager("config").getProperty("font"), 14));
+
     }
 
     private LogsAccessorThread logsAccessorThread;

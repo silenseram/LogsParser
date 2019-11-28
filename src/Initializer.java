@@ -32,7 +32,8 @@ public class Initializer {
 
             bw.write("server=EasyTech\n" +
                     "logs_server=EasyTech\n" +
-                    "theme=dark");
+                    "theme=dark\n" +
+                    "font=Arial");
             bw.close();
         }
         if (!timezoneCfg.exists()){

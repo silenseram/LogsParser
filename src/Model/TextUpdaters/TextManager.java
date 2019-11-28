@@ -52,7 +52,6 @@ public class TextManager {
                 new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
             for (String current = reader.readLine(); current != null; current = reader
                     .readLine()) {
-                String toAdd;
                 if (params.isShowPrivateMessages() && isPrivateMessage(current)) {
                     result.add(PrivateMessage.getMessage(current, params.isShowTime(), timezoneManager));
                 } else if (params.isShowLocalMessages() && islocalChatMessage(current)){

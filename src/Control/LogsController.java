@@ -21,6 +21,7 @@ public class LogsController {
         ServerListUpdater updater = new ServerListUpdater(comboBox, FileManager.getConfigFilePath("servers"));
         comboBox.getItems().setAll(updater.getData());
         isServerListLoaded = true;
+        textArea.setFont(new Font(new ConfigManager("config").getProperty("font"), 14));
     }
 
     private boolean isServerListLoaded = false;

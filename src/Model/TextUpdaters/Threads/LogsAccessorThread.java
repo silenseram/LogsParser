@@ -6,6 +6,10 @@ import Model.LinkManager;
 import Model.MCLogs;
 import Model.TextUpdaters.TextManager;
 import javafx.scene.control.TextArea;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextBuilder;
 
 import java.time.LocalDate;
 import java.util.List;
