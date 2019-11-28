@@ -43,6 +43,20 @@ public class LogsManagerController {
     public TextArea textArea;
     @FXML
     public ComboBox<String> comboBox;
+    @FXML
+    private Slider slider;
+
+    public void onMousePressed(Event e){
+        Font font = textArea.getFont();
+        font = new Font(font.getName(), slider.getValue());
+        textArea.setFont(font);
+    }
+
+    public void onMouseReleased(Event e) {
+        Font font = textArea.getFont();
+        font = new Font(font.getName(), slider.getValue());
+        textArea.setFont(font);
+    }
 
     @FXML
     private void click(Event event){

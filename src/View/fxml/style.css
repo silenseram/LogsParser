@@ -67,16 +67,8 @@
     -fx-background-color: #9e9e9e;
 }
 
-.pane{
-    -fx-background-insets: red;
-    -fx-background-color: red;
-    -fx-border-color: red;
-}
-    
-.border-pane{
-    -fx-color: red;
-    -fx-background-color: red;
-    -fx-border-color: red;
+.slider{
+    -fx-color: #878787;
 }
 
 .date-picker{

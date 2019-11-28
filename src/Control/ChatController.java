@@ -74,6 +74,21 @@ public class ChatController {
     String selection = "HiTechClassic";
 
     @FXML
+    private Slider slider;
+
+    public void onMousePressed(Event e){
+        Font font = textArea.getFont();
+        font = new Font(font.getName(), slider.getValue());
+        textArea.setFont(font);
+    }
+
+    public void onMouseReleased(Event e) {
+        Font font = textArea.getFont();
+        font = new Font(font.getName(), slider.getValue());
+        textArea.setFont(font);
+    }
+
+    @FXML
     public void click() throws InterruptedException {
         setDisplayParams();
         setTextUpdater();

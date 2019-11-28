@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToolBar?>
@@ -14,7 +15,7 @@
           <center>
               <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Arial" size="14.0" />
+                  <Font name="Broadway" size="14.0" />
                </font></TextArea>
           </center>
          <bottom>
@@ -22,6 +23,7 @@
               <items>
                   <ToggleButton fx:id="toggleButton" mnemonicParsing="false" onAction="#onToggleButtonAction" text="Онлайн режим" />
                   <ComboBox fx:id="comboBox" onAction="#onComboBoxAction" onShowing="#onComboBoxShow" prefWidth="150.0" promptText="Сервер" />
+                  <Slider fx:id="slider" max="40.0" min="10.0" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" />
               </items>
             </ToolBar>
          </bottom>

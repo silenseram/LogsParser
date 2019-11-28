@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,6 +26,7 @@
                         <CheckBox fx:id="globalCheckBox" mnemonicParsing="false" onAction="#onGlobalCheckBoxAction" text="G" />
                         <CheckBox fx:id="privateMessageCheckBox" mnemonicParsing="false" onAction="#onPrivateMessageCheckBoxAction" text="Личные сообщения" />
                         <ComboBox fx:id="comboBox" onAction="#comboBoxOnAction" onShowing="#onShowComboBox" opacity="0.66" prefWidth="150.0" promptText="Сервер" />
+                  <Slider fx:id="slider" max="40.0" min="10.0" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" />
                     </items>
                 </ToolBar>
             </bottom>

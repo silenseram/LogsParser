@@ -35,6 +35,20 @@ public class LogsController {
     private ComboBox<String> comboBox;
     @FXML
     private ToggleButton toggleButton;
+    @FXML
+    private Slider slider;
+
+    public void onMousePressed(Event e){
+        Font font = textArea.getFont();
+        font = new Font(font.getName(), slider.getValue());
+        textArea.setFont(font);
+    }
+
+    public void onMouseReleased(Event e) {
+        Font font = textArea.getFont();
+        font = new Font(font.getName(), slider.getValue());
+        textArea.setFont(font);
+    }
 
     public void onComboBoxShow(javafx.event.Event event) throws InterruptedException {
     }
