@@ -25,6 +25,7 @@ public class LogsManagerController {
             comboBox.getItems().setAll(serverListUpdater.getData());
         }
         textArea.setFont(new Font(new ConfigManager("config").getProperty("font"), 14));
+        slider.setValue(textArea.getFont().getSize());
 
     }
 

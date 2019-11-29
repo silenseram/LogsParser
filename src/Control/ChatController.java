@@ -28,6 +28,8 @@ public class ChatController {
         isServerListLoaded = true;
         textArea.setFont(new Font(new ConfigManager("config").getProperty("font"), 14));
 
+        slider.setValue(textArea.getFont().getSize());
+
         click();
     }
 

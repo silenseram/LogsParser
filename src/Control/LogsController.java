@@ -22,6 +22,8 @@ public class LogsController {
         comboBox.getItems().setAll(updater.getData());
         isServerListLoaded = true;
         textArea.setFont(new Font(new ConfigManager("config").getProperty("font"), 14));
+        slider.setValue(textArea.getFont().getSize());
+
     }
 
     private boolean isServerListLoaded = false;
