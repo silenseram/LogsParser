@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 public class TextManager {
 
     //НЕНАВИЖУ РЕГУЛЯРКИ
-    private String privateMessaeStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell|r|pm)\\s";
+    private String privateMessageStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s.{1,32}\\sissued server command:\\s/(m|msg|t|tell|r|pm)\\s";
     private String localChatStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s\\[{1}L\\]{1}\\s.{1,32}\\s";
     private String globalChatStringPattern = "\\[\\d{1,2}:\\d{1,2}:\\d{1,2}\\]\\s\\[{1}G\\]{1}\\s.{1,32}\\s";
 
@@ -28,7 +28,7 @@ public class TextManager {
 
     public TextManager(String filePath){
         file = new File(filePath);
-        privateMessagePattern = Pattern.compile(privateMessaeStringPattern);
+        privateMessagePattern = Pattern.compile(privateMessageStringPattern);
         localChatPattern = Pattern.compile(localChatStringPattern);
         globalChatPattern = Pattern.compile(globalChatStringPattern);
         this.timezoneManager = new TimezoneManager(new ConfigManager("config").getServerName());

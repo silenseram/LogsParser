@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/LogsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/LogsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/LogsManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/LogsManagerController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -305,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574974214601</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="slider is setted correct from start">
+      <created>1575052087855</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1575052087855</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -329,7 +333,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="multithread, try 2" />
     <MESSAGE value="fixed multithreading" />
     <MESSAGE value="fix the project" />
     <MESSAGE value="add option to show time" />
@@ -354,7 +357,8 @@
     <MESSAGE value="initializer fix" />
     <MESSAGE value="font-support by config" />
     <MESSAGE value="add option to change font size with slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="add option to change font size with slider" />
+    <MESSAGE value="slider is setted correct from start" />
+    <option name="LAST_COMMIT_MESSAGE" value="slider is setted correct from start" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

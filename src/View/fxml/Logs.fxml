@@ -13,7 +13,7 @@
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <center>
-              <TextArea fx:id="textArea" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+              <TextArea fx:id="textArea" editable="false" prefHeight="644.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Broadway" size="14.0" />
                </font></TextArea>
