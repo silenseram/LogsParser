@@ -30,6 +30,10 @@ public class LinkManager {
         return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
     }
 
+    if (getServerName().equals("Hitech112_Public_Logs")){
+        return "http://logs.s4.mcskill.ru/Hitech112_Public_Logs/" + date + ".txt";
+    }
+
     return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
     }
 

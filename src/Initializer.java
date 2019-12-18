@@ -57,7 +57,8 @@ public class Initializer {
                     "Hitechcraft3=3\n" +
                     "Islandcraft=2\n" +
                     "Technomagic=3\n" +
-                    "Technomagic2=3");
+                    "Technomagic2=3\n" +
+                    "Hitech112_Public_Logs=2");
             bw.close();
         }
         if(!serverCfg.exists()){
@@ -77,7 +78,8 @@ public class Initializer {
                     "HitechCraft(1)=Hitechcraft\n" +
                     "HitechCraft(2)=Hitechcraft2\n" +
                     "HitechCraft(3)=Hitechcraft3\n" +
-                    "TMSkyBlock=Islandcraft");
+                    "TMSkyBlock=Islandcraft\n" +
+                    "HitechCraft(1.12.2)=Hitech112_Public_Logs");
             bw.close();
         }
     }

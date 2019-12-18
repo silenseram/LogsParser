@@ -7,7 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +121,7 @@
       <workItem from="1570886344899" duration="54861000" />
       <workItem from="1572191449151" duration="6542000" />
       <workItem from="1572206068243" duration="4000" />
+      <workItem from="1576692927103" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="remove some usless and debug code">
       <created>1572992189351</created>
@@ -311,9 +314,6 @@
     </task>
     <option name="localTasksCounter" value="28" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61407000" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
