@@ -7,9 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bdbe424-1cf9-4639-a5ac-5049d6a43894" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Initializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/LinkManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LinkManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/LogsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/LogsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MCLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MCLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/TextManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TextUpdaters/Threads/LogsUpdaterThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/fxml/Logs.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../forTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15711462" />
@@ -121,7 +124,8 @@
       <workItem from="1570886344899" duration="54861000" />
       <workItem from="1572191449151" duration="6542000" />
       <workItem from="1572206068243" duration="4000" />
-      <workItem from="1576692927103" duration="269000" />
+      <workItem from="1576692927103" duration="705000" />
+      <workItem from="1579005335496" duration="1177000" />
     </task>
     <task id="LOCAL-00001" summary="remove some usless and debug code">
       <created>1572992189351</created>
@@ -312,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575052087855</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add 1 server">
+      <created>1576693242727</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1576693242728</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +344,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fixed multithreading" />
     <MESSAGE value="fix the project" />
     <MESSAGE value="add option to show time" />
     <MESSAGE value="fixed answer message" />
@@ -358,7 +368,8 @@
     <MESSAGE value="font-support by config" />
     <MESSAGE value="add option to change font size with slider" />
     <MESSAGE value="slider is setted correct from start" />
-    <option name="LAST_COMMIT_MESSAGE" value="slider is setted correct from start" />
+    <MESSAGE value="add 1 server" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 1 server" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

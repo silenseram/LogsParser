@@ -3,6 +3,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,6 +23,7 @@
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
               <items>
                   <ToggleButton fx:id="toggleButton" mnemonicParsing="false" onAction="#onToggleButtonAction" text="Онлайн режим" />
+                  <TextField fx:id="stringCountTextField" onAction="#onStringCountTextFieldAction" prefHeight="27.0" prefWidth="138.0" promptText="Ограничение записей" />
                   <ComboBox fx:id="comboBox" onAction="#onComboBoxAction" onShowing="#onComboBoxShow" prefWidth="150.0" promptText="Сервер" />
                   <Slider fx:id="slider" max="40.0" min="10.0" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" />
               </items>

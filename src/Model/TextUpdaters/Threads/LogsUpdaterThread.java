@@ -19,6 +19,11 @@ public class LogsUpdaterThread implements Runnable {
     private MCLogs mcLogs;
     private FileUpdater fileUpdater;
     private TextArea textArea;
+    private int stringsAmount;
+
+    public void setStringsAmount(int stringsAmount) {
+        this.stringsAmount = stringsAmount;
+    }
 
     public LogsUpdaterThread(TextArea textArea, LocalDate localDate, ConfigManager configManager, String mainThreadName, MCLogs mcLogs) {
         this.textArea = textArea;
@@ -27,6 +32,7 @@ public class LogsUpdaterThread implements Runnable {
         this.mainThreadName = mainThreadName;
         this.mcLogs = mcLogs;
         this.fileUpdater = new FileUpdater(new LinkManager(configManager.getLogsServerName(), localDate), localDate);
+        stringsAmount = 100;
     }
 
     @Override
@@ -54,7 +60,7 @@ public class LogsUpdaterThread implements Runnable {
 
             List<String> newMessages = null;
             try {
-                newMessages = mcLogs.getCuttedLogs();
+                newMessages = mcLogs.getCuttedLogs(stringsAmount);
 
                 for (String i : newMessages){
                     text += i + "\n";

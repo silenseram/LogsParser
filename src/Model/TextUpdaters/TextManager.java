@@ -91,7 +91,7 @@ public class TextManager {
         return result;
     }
 
-    public List<String> getCuttedLogs(){
+    public List<String> getCuttedLogs(int stringAmount){
         List<String> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(file), "UTF-8"))) {
@@ -104,9 +104,9 @@ public class TextManager {
         }
 
         int size = result.size();
-        if (size > 100){
+        if (size > stringAmount){
             List<String> res = new ArrayList<>();
-            for (int i = size - 100; i < size; i++){
+            for (int i = size - stringAmount; i < size; i++){
                 res.add(result.get(i));
             }
             return res;

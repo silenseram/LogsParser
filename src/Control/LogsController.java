@@ -39,6 +39,18 @@ public class LogsController {
     private ToggleButton toggleButton;
     @FXML
     private Slider slider;
+    @FXML
+    private TextField stringCountTextField;
+
+
+    public void onStringCountTextFieldAction(Event e){
+        try{
+            int amount = Integer.parseInt(stringCountTextField.getText());
+            logsUpdaterThread.setStringsAmount(amount);
+        } catch (Exception ex){
+            System.out.println(ex.toString());
+        }
+    }
 
     public void onMousePressed(Event e){
         Font font = textArea.getFont();
