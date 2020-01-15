@@ -78,6 +78,8 @@ public class Initializer {
                     "HitechCraft(1)=Hitechcraft\n" +
                     "HitechCraft(2)=Hitechcraft2\n" +
                     "HitechCraft(3)=Hitechcraft3\n" +
+                    "TechnoMagic(1)=Technomagic\n" +
+                    "TechnoMagic(2)=Technomagic2\n" +
                     "TMSkyBlock=Islandcraft\n" +
                     "HitechCraft(1.12.2)=Hitech112_Public_Logs");
             bw.close();

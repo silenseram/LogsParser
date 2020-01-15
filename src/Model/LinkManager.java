@@ -13,28 +13,29 @@ public class LinkManager {
     }
 
     public String getUrl(){
-    String date = TextUtils.getStringDate(localDate);
-    if (getServerNumber().equals("s1")) {
-        return "https://logs." + getServerNumber() + ".mcskill.ru/p/" + serverName + "_Public_Logs/" + date + ".txt";
-    }
-    if (getServerNumber().equals("s4")) {
-        return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
-    }
-    if (getServerNumber().equals("s8")) {
-        return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "/" + date + ".txt";
-    }
-    if (getServerNumber().equals("s7")) {
-        return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
-    }
-    if (getServerName().equals("IventServer2")) {
-        return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
-    }
+        String date = TextUtils.getStringDate(localDate);
 
-    if (getServerName().equals("Hitech112_Public_Logs")){
-        return "http://logs.s4.mcskill.ru/Hitech112_Public_Logs/" + date + ".txt";
-    }
+        if (getServerNumber().equals("s1")) {
+            return "https://logs." + getServerNumber() + ".mcskill.ru/p/" + serverName + "_Public_Logs/" + date + ".txt";
+        }
+        if (getServerNumber().equals("s4")) {
+            return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
+        }
+        if (getServerNumber().equals("s8")) {
+            return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "/" + date + ".txt";
+        }
+        if (getServerNumber().equals("s7")) {
+            return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
+        }
+        if (getServerName().equals("IventServer2")) {
+            return "http://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_public_logs/" + date + ".txt";
+        }
 
-    return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
+        if (getServerName().equals("Hitech112_Public_Logs")){
+            return "http://logs.s4.mcskill.ru/Hitech112_Public_Logs/" + date + ".txt";
+        }
+
+        return "https://logs." + getServerNumber() + ".mcskill.ru/" + serverName + "_Public_Logs/" + date + ".txt";
     }
 
     private String getServerNumber(){
